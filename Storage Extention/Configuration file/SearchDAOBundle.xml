@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StorageDAOBundles>
+    <StorageDAOBundle type="filesystem">
+		<StorageDAO typeMapping="Page" class="com.tridion.storage.si4t.dao.FSSearchPageDAO"/>
+		<StorageDAO typeMapping="Binary" class="com.tridion.storage.si4t.dao.FSSearchBinaryContentDAO"/>
+		<StorageDAO typeMapping="ComponentPresentation" class="com.tridion.storage.si4t.dao.FSSearchComponentPresentationDAO"/>
+		<StorageDAO typeMapping="ItemMeta" class="com.tridion.storage.si4t.dao.JPASearchItemDAO"/>
+		<StorageDAO typeMapping="PageMeta" class="com.tridion.storage.si4t.dao.JPASearchItemDAO"/>
+		<StorageDAO typeMapping="BinaryMeta" class="com.tridion.storage.si4t.dao.JPASearchItemDAO"/>
+    </StorageDAOBundle>
+	<StorageDAOBundle type="persistence">
+		<StorageDAO typeMapping="Page" class="com.tridion.storage.si4t.dao.JPASearchPageDAO"/>
+		<StorageDAO typeMapping="Binary" class="com.tridion.storage.si4t.dao.JPASearchBinaryContentDAO"/>
+		<StorageDAO typeMapping="ComponentPresentation" class="com.tridion.storage.si4t.dao.JPASearchComponentPresentationDAO"/>
+		<StorageDAO typeMapping="ItemMeta" class="com.tridion.storage.si4t.dao.JPASearchItemDAO"/>
+		<StorageDAO typeMapping="PageMeta" class="com.tridion.storage.si4t.dao.JPASearchItemDAO"/>
+		<StorageDAO typeMapping="BinaryMeta" class="com.tridion.storage.si4t.dao.JPASearchItemDAO"/>
+    </StorageDAOBundle>
+</StorageDAOBundles>

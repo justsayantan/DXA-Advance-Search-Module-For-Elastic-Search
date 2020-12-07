@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tridion.ExternalContentLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:Tridion.ExternalContentLibrary.V1.SessionFactory">
+            <summary>
+            Use SessionFactory to create an <see cref="T:Tridion.ExternalContentLibrary.V1.IEclSession"/> based on a TCM Session. SessionFactory is the starting point
+            for using External Content Library in templating and event handlers.
+            </summary>
+        </member>
+        <member name="M:Tridion.ExternalContentLibrary.V1.SessionFactory.CreateEclSession(Tridion.ContentManager.Session)">
+            <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V1.IEclSession"/> based on the specified TCM Session.
+            </summary>
+            <param name="tcmSession">A TCM Session to use as a base for the IContentManagerEclSession created.</param>
+            <returns>An <see cref="T:Tridion.ExternalContentLibrary.V1.IEclSession"/> based on the specified TCM Session.</returns>
+            <remarks>
+            Note that <see cref="T:Tridion.ExternalContentLibrary.V1.IEclSession"/> is not automatically disposed when the TCM Session is disposed.
+            Call <see cref="M:System.IDisposable.Dispose"/> explicitly when the session is no longer needed, otherwise
+            both the Content Manager Server (Tridion) and the external system may run out of resources,
+            for example memory and database connections.
+            </remarks>
+        </member>
+        <member name="M:Tridion.ExternalContentLibrary.V1.SessionFactory.CreateEclSession(System.String)">
+            <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V1.IEclSession"/> for a specific user.
+            </summary>
+            <param name="username">The username to use when creating the TCM Session.</param>
+            <returns>An <see cref="T:Tridion.ExternalContentLibrary.V1.IEclSession"/> for the specified user.</returns>
+            <remarks>
+            The identity under which the process is running must be configured as a Tridion impersonation user, unless 
+            the username match the username of the identity the process is running under and the username identifies a valid
+            Tridion User.
+            </remarks>
+        </member>
+        <member name="T:Tridion.ExternalContentLibrary.V2.SessionFactory">
+            <summary>
+            Use SessionFactory to create an <see cref="T:Tridion.ExternalContentLibrary.V1.IEclSession"/> based on a TCM Session. SessionFactory is the starting point
+            for using External Content Library in templating and event handlers.
+            </summary>
+        </member>
+        <member name="M:Tridion.ExternalContentLibrary.V2.SessionFactory.CreateEclSession(Tridion.ContentManager.Session)">
+            <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession"/> based on the specified TCM Session.
+            </summary>
+            <param name="tcmSession">A TCM Session to use as a base for the IEclSession created.</param>
+            <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession"/> based on the specified TCM Session.</returns>
+            <remarks>
+            Note that <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession"/> is not automatically disposed when the TCM Session is disposed.
+            Call <see cref="M:System.IDisposable.Dispose"/> explicitly when the session is no longer needed, otherwise
+            both the Content Manager Server (Tridion) and the external system may run out of resources,
+            for example memory and database connections.
+            </remarks>
+        </member>
+        <member name="M:Tridion.ExternalContentLibrary.V2.SessionFactory.CreateEclSession(System.String)">
+            <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession"/> for a specific user.
+            </summary>
+            <param name="username">The username to use when creating the TCM Session.</param>
+            <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession"/> for the specified user.</returns>
+            <remarks>
+            The identity under which the process is running must be configured as a Tridion impersonation user, unless 
+            the username match the username of the identity the process is running under and the username identifies a valid
+            Tridion User.
+            </remarks>
+        </member>
+        <member name="T:Tridion.ExternalContentLibrary.V3.SessionFactory">
+            <summary>
+            Use SessionFactory to create an <see cref="T:Tridion.ExternalContentLibrary.Contract.V3.ContentManager.IContentManagerEclSession"/> based on a TCM Session. SessionFactory is the starting point
+            for using External Content Library in templating and event handlers.
+            </summary>
+        </member>
+        <member name="M:Tridion.ExternalContentLibrary.V3.SessionFactory.CreateEclSession(Tridion.ContentManager.Session)">
+            <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.Contract.V3.ContentManager.IContentManagerEclSession"/> based on the specified TCM Session.
+            </summary>
+            <param name="tcmSession">A TCM Session to use as a base for the IContentManagerEclSession created.</param>
+            <returns>An <see cref="T:Tridion.ExternalContentLibrary.Contract.V3.ContentManager.IContentManagerEclSession"/> based on the specified TCM Session.</returns>
+            <remarks>
+            Note that <see cref="T:Tridion.ExternalContentLibrary.Contract.V3.ContentManager.IContentManagerEclSession"/> is not automatically disposed when the TCM Session is disposed.
+            Call <see cref="M:System.IDisposable.Dispose"/> explicitly when the session is no longer needed, otherwise
+            both the Content Manager Server (Tridion) and the external system may run out of resources,
+            for example memory and database connections.
+            </remarks>
+        </member>
+        <member name="M:Tridion.ExternalContentLibrary.V3.SessionFactory.CreateEclSession(System.String)">
+            <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.Contract.V3.ContentManager.IContentManagerEclSession"/> for a specific user.
+            </summary>
+            <param name="username">The username to use when creating the TCM Session.</param>
+            <returns>An <see cref="T:Tridion.ExternalContentLibrary.Contract.V3.ContentManager.IContentManagerEclSession"/> for the specified user.</returns>
+            <remarks>
+            The identity under which the process is running must be configured as a Tridion impersonation user, unless 
+            the username match the username of the identity the process is running under and the username identifies a valid
+            Tridion User.
+            </remarks>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1795 @@
+﻿<doc>
+  <assembly>
+    <name>Tridion.ExternalContentLibrary.V2</name>
+  </assembly>
+  <members>
+    <member name="T:Tridion.ExternalContentLibrary.V2.FieldListType">
+      <summary>
+            Determines how the user interface should render the multiple choices for <see cref="T:Tridion.ExternalContentLibrary.V2.IFieldDefinition">fields</see> with multiple allowed values.
+            </summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.FieldListType.None">
+      <summary>Don't present a list of allowed values.</summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.FieldListType.Select">
+      <summary>Present a select list (or drop-down list if Height=1)</summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.FieldListType.Radio">
+      <summary>Present radio buttons.</summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.FieldListType.Checkbox">
+      <summary>Present check boxes.</summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IFieldGroupDefinition">
+      <summary>
+            Creates a group of <see cref="T:Tridion.ExternalContentLibrary.V2.IFieldDefinition" />.
+            </summary>
+      <remarks>
+        <para>Allows grouping a set of fields in the user interface. By setting <see cref="P:Tridion.ExternalContentLibrary.V2.IFieldDefinition.MinOccurs" /> and <see cref="P:Tridion.ExternalContentLibrary.V2.IFieldDefinition.MaxOccurs" />
+            the entire set of fields can be made optional and/or used as a list.</para>
+        <para>
+            To create a group first use <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateFieldGroupDefinition(System.String,System.String,System.Int32,System.Nullable{System.Int32},System.String)" /> then add new fields to the <see cref="P:Tridion.ExternalContentLibrary.V2.IFieldGroupDefinition.Fields" /> collection. It is possible to add a new <see cref="T:Tridion.ExternalContentLibrary.V2.IFieldGroupDefinition" />
+            to the <see cref="P:Tridion.ExternalContentLibrary.V2.IFieldGroupDefinition.Fields" /> collection as long as it does not lead to a cyclic data structure.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFieldGroupDefinition.Fields">
+      <summary>
+            Gets the list of <see cref="T:Tridion.ExternalContentLibrary.V2.IFieldDefinition">fields</see> included in the group.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition">
+      <summary>
+            Defines a single line text field in the user interface generated for the metadata of the external system.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.AllowedValues">
+      <summary>
+            Gets a list of the dates the user is able to select from. And empty list if the user is allowed to enter any number.
+            </summary>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.ListHeight" />
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.ListType" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.ListHeight">
+      <summary>
+            Gets the height of the rendered list if the <see cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.AllowedValues" /> is not empty. Use <see cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.ListType" /> to specify how the list should be rendered.
+            </summary>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.AllowedValues" />
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.ListType" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.ListType">
+      <summary>
+            Determines how the user interface should render multiple choices specified in <seealso cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.AllowedValues" />.
+            </summary>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.AllowedValues" />
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.ListHeight" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.MinValue">
+      <summary>
+            Gets the minimum value or <c>null</c> if there is no minimum value.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.IsMinValueExclusive">
+      <summary>
+            Gets a value indicating whether the specified minimum value is exclusive or inclusive.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.MaxValue">
+      <summary>
+            Gets the maximum value or <c>null</c> if there is no maximum value.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.IsMaxValueExclusive">
+      <summary>
+            Gets a value indicating whether the specified maximum value is exclusive or inclusive.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.Pattern">
+      <summary>
+            Gets a regular expression pattern to constrain the value.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.TotalDigits">
+      <summary>
+            Gets the constraint on the total number of digits.
+            </summary>
+      <value>
+            A nullable integer value. If <c>null</c>, a constraint on the total number of digits is not defined.
+            </value>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.FractionDigits">
+      <summary>
+            Gets or sets the constraints on the number of fraction digits.
+            </summary>
+      <value>
+            A nullable integer value. <c>null</c> null, a constraint on the number of fraction digits is not defined.
+            </value>
+      <remarks>
+            If only integer values are allowed, this constraint should be set to <c>0</c>.
+            </remarks>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition">
+      <summary>
+            Defines a single line text field in the user interface generated for the metadata of the external system.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.AllowedValues">
+      <summary>
+            Gets a list of the dates the user is able to select from. And empty list if the user is allowed to enter any date.
+            </summary>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.ListHeight" />
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.ListType" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.ListHeight">
+      <summary>
+            Gets the height of the rendered list if the <see cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.AllowedValues" /> is not empty. Use <see cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.ListType" /> to specify how the list should be rendered.
+            </summary>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.AllowedValues" />
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.ListType" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.ListType">
+      <summary>
+            Determines how the user interface should render multiple choices specified in <seealso cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.AllowedValues" />.
+            </summary>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.AllowedValues" />
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.ListHeight" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.MinValue">
+      <summary>
+            Gets the minimum date of the user can enter.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.IsMinValueExclusive">
+      <summary>
+            Gets a value indicating whether the specified minimum value is exclusive or inclusive.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.MaxValue">
+      <summary>
+            Gets the maximum date the user can enter.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.IsMaxValueExclusive">
+      <summary>
+            Gets a value indicating whether the specified maximum value is exclusive or inclusive.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.Pattern">
+      <summary>
+            Gets a regular expression pattern to constrain the value.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IXhtmlFieldDefinition">
+      <summary>
+            Represents an XHTML field (a.k.a. Format Area).
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IXhtmlFieldDefinition.Height">
+      <summary>
+            Gets the height (in number of lines) of the text area in the form-based user interface.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IXhtmlFieldDefinition.FilterXslt">
+      <summary>
+            Gets a string with the Filter XSLT used by the Tridion user interface remove any invalid elements or attributes. <c>null</c> if no filtering should be done in the user interface.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem">
+      <summary>
+            Represents the basic properties of an external item.
+            </summary>
+      <remarks>
+            The <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem" /> is used with <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,Tridion.ExternalContentLibrary.V2.EclItemTypes)" /> to
+            build the visible folder structure in the Tridion user interface. The Provider can limit the amount of data to be initialized
+            and transferred to SDL Tridion when the user is browsing the content by returning an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem" />
+            instead of the full <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" /> .
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.Id">
+      <summary>
+            Gets the unique id of the item.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.Title">
+      <summary>
+            Gets or sets the title of the item.
+            </summary>
+      <remarks>
+        <para>
+            The property should only be changed if <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.CanUpdateTitle" /> returns <c>true</c>.
+            If <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.CanUpdateTitle" /> returns <c>false</c>, the Provider must throw a 
+            <c>NotSupportedException</c> when the property is changed.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.DisplayTypeId">
+      <summary>
+            Gets the id of the type to display in the UI.
+            </summary>
+      <remarks>
+            The id must be one of the ids returned by <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibrary.DisplayTypes" /></remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.IconIdentifier">
+      <summary>
+            Gets the string identifying the icon to use for this item. The identifier is passed to <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.GetIconImage(System.String,System.String,System.Int32)" />.
+            If <c>null</c> is returned, the default icon is used.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.IsThumbnailAvailable">
+      <summary>
+            Gets a value indicating whether a thumbnail view is available for this item.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.ThumbnailETag">
+      <summary>
+            Gets a string with the ETag (Entity Tag) of the thumbnail. Returns <c>null</c> if <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.IsThumbnailAvailable" /> returns false.
+            </summary>
+      <remarks>
+        <para>The ETag is used to control caching of the thumbnail. If the ETag remains unchanged, the server side cache and browser cache assume the thumbnail is up-to-date.</para>
+        <para>Depending on the data structure of the external system, this could for example be a string representation of the <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.Modified" /> date or a
+            version number.</para>
+        <para>If the Provider cannot determine whether the thumbnail should be changed, it must use a time limited ETag. For example, to cache
+            images up to a day, the following ETag can be used: DateTime.UtcNow.ToString("yyyyMMdd").</para>
+      </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.Modified">
+      <summary>
+            Gets the last modified date of the item, or <c>null</c> if the date is not available.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.CanGetUploadMultimediaItemsUrl">
+      <summary>
+            Gets a value indicating whether the user can upload new multimedia items to the folder.
+            </summary>
+      <remarks>
+            This value is only used for Folders. The returned value must be identical to the value set in <see cref="P:Tridion.ExternalContentLibrary.V2.IFolderContent.CanGetUploadMultimediaItemsUrl" />
+            when getting the list of child Items. If the value is set to <c>true</c>, the Provider must return the URL of a page where the user can
+            upload the items from the method <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetUploadMultimediaItemsUrl(Tridion.ExternalContentLibrary.V2.IEclUri)" />.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.CanSearch">
+      <summary>
+            Gets a value indicating whether the provider supports searching in the folder.
+            </summary>
+      <remarks>
+            The returned value must be identical to the value set in <see cref="P:Tridion.ExternalContentLibrary.V2.IFolderContent.CanSearch" />
+            when getting the list of child items of the mount point or folder.
+            </remarks>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem">
+      <summary>
+            Represents a multimedia item on the external system with all details loaded.
+            </summary>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetTemplateFragment(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})">
+      <summary>
+            Gets a text fragment, typically an HTML img or div element, that can be used to embed the item on a page.
+            </summary>
+      <param name="attributes">Allows the passing of attributes from templating code to the Provider. The supported attributes
+            are determined by the Provider.</param>
+      <returns>A text fragment that represents the item inserted on a page, or <c>null</c> if the item does not support embedding on a page.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetDirectLinkToPublished(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})">
+      <summary>
+            Gets the URI that can be used from a public Web site to link directly to the item on the external system.
+            </summary>
+      <param name="attributes">Allows the passing of attributes from templating code to the Provider. The supported attributes
+            are determined by the provider.</param>
+      <returns>A valid URI that can be used to link to the external item, or <c>null</c> if external links are not supported.</returns>
+      <remarks>
+            The link returned is to a publicly available version. If the external system does not have its own publishing mechanism
+            to make the item available, the Provider should return <c>null</c>. Use <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetContent(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" /> to publish
+            the item though the Tridion publisher.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetContent(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})">
+      <summary>
+            Gets an <see cref="T:Tridion.ExternalContentLibrary.V2.IContentResult" /> that can be used to read the binary content of the item, or <c>null</c> if the item cannot be represented by a binary stream.
+            </summary>
+      <param name="attributes">Allows the passing of attributes from templating code to the Provider. The supported attributes
+            are determined by the provider.</param>
+      <returns>Use <see cref="T:Tridion.ExternalContentLibrary.V2.IContentResult" /> to read the binary content of the item, or <c>null</c> if the item cannot be represented by a binary stream.</returns>
+      <seealso cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateContentResult(System.IO.Stream,System.Int64,System.String)" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.MimeType">
+      <summary>
+            Gets the MIME type of the external item, or <c>null</c> if the item does not have a MIME type.
+            </summary>
+      <remarks>
+            For example, if an item represents a PNG image the MIME type is "image/png". If the item
+            represents a video player including the playback UI, so not just the actual video stream, it will not have a
+            MIME type and it will return null.
+            </remarks>
+      <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetContent(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.Width">
+      <summary>
+            Gets the width of the multimedia item in pixels.
+            </summary>
+      <remarks>
+            The <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.Width" /> and height is typically used when embedding an item into a Component or Page.
+            If an item cannot be embedded but only linked to using <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetDirectLinkToPublished(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" />, a Provider
+            may return null.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.Height">
+      <summary>
+            Gets the height of the multimedia item in pixels.
+            </summary>
+      <remarks>
+            The width and <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.Height" /> is typically used when embedding an item into a Component or Page.
+            If an item cannot be embedded but only linked to using <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetDirectLinkToPublished(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" />, a Provider
+            may return null.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.Filename">
+      <summary>
+            Gets the filename including extension; <c>null</c> if the filename is not available.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IContentResult">
+      <summary>
+            Represents the binary content of the item.
+            </summary>
+      <seealso cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetContent(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" />
+      <seealso cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateContentResult(System.IO.Stream,System.Int64,System.String)" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentResult.Stream">
+      <summary>
+            Gets the stream that can be used to read the result.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentResult.ContentLength">
+      <summary>
+            Gets the length of the content in bytes.
+            </summary>
+      <remarks>
+            For a stream with seeking enabled, this can be set to <see cref="P:System.IO.Stream.Length" />.
+            </remarks>
+      <seealso cref="P:System.Net.WebResponse.ContentLength" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentResult.ContentType">
+      <summary>
+            Gets the content type of the data being received.
+            </summary>
+      <seealso cref="P:System.Net.WebResponse.ContentType" />
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IDispatchHandler">
+      <summary>
+            Supports dispatching messages directly to the provider.
+            </summary>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IDispatchHandler.Dispatch(System.String,System.String,System.String,System.String@)">
+      <summary>
+            Dispatches the specified command to the object in the Provider.
+            </summary>
+      <param name="command">A string representing the method to be executed. It is recommended to use a short keyword.</param>
+      <param name="payloadVersion">A string identifying the version of the Provider the payload is created for.</param>
+      <param name="payload">The payload containing the parameters to the method. It is recommended to encode the parameters in an XML document.</param>
+      <param name="responseVersion">A string identifying the version of the provider handling the method.</param>
+      <returns>The response from the method call. The Provider determines the exact format; the recommended format is an XML document.
+            </returns>
+      <remarks>
+        <para>
+            Use the <see cref="M:Tridion.ExternalContentLibrary.V2.IDispatchHandler.Dispatch(System.String,System.String,System.String,System.String@)" /> method in SDL Tridion templates and event handlers to perform operations supported by the Provider
+            but not supported directly by the External Content Library API. For example, operations that needs to be performed when an item is published from SDL Tridion.
+            The External Content Library is not aware of the content being dispatched and will not perform any verification of the data being passed.
+            </para>
+        <para>
+            It is recommended to avoid communicating with the Content Manager of SDL Tridion directly from a Provider, but if itis necessary use the 
+            SDL Tridion Core Service instead of the <see cref="T:Tridion.ExternalContentLibrary.V2.IDispatchHandler" />.
+            </para>
+        <para>
+            To ensure a new Provider does not break implementations, take into account the following guidelines:
+            </para>
+        <list type="bullet">
+          <item>The caller must specify the version of the Provider it was programmed against in the <paramref name="payloadVersion" /> parameter.</item>
+          <item>The caller must throw a NotSupportedException if the version specified in <paramref name="responseVersion" /> is not known.</item>
+          <item>The provider must throw a NotSupportedException if the command specified in <paramref name="command" /> is not known.</item>
+          <item>The provider must throw a NotSupportedException if it cannot handle the specified command according to the expected behavior of the version
+            specified in <paramref name="payloadVersion" />. The exception message must clearly indicate which versions are supported.</item>
+          <item>
+            The Provider should use the same version to identify the <paramref name="responseVersion" /> and supported <paramref name="payloadVersion" /> as
+            it use to identify in the version in the AddIn attribute on the implementation of <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibrary" />.
+            </item>
+          <item>
+            The Provider should support the <paramref name="payload" /> of older versions.
+            </item>
+          <item>
+            The Provider documentation must include details on which <paramref name="command">commands</paramref> it supports and the exact
+            format of the <paramref name="payload" /> and returned value.</item>
+          <item>
+            It is recommended the Provider attempt to encode the response with the same version as the <paramref name="payload" />.
+            </item>
+          <item>
+            It is recommended the Provider use an XML string to represent complex types.
+            </item>
+        </list>
+      </remarks>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IDisplayType">
+      <summary>
+            Represents an item type as it is displayed in a Tridion UI, for example in the "Type" column of the Content Manager Explorer.
+            </summary>
+      <remarks>
+            In many cases, there will be one display type for each <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.SubType" />. Unlike the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.SubType" />
+            of an <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.Id" />, the display type of an item does not have to remain constant for the life-time of the item.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDisplayType.Id">
+      <summary>
+            The ID identifying the display type.
+            </summary>
+      <remarks>
+            The ID does not need to be unique across multiple <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibrary" /> and <see cref="T:Tridion.ExternalContentLibrary.V2.EclItemTypes" />. 
+            For example, two different libraries can associate different texts with the Id "IMAGE".
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDisplayType.DisplayText">
+      <summary>
+            Gets the text to display in the UI for the type. 
+            </summary>
+      <remarks>
+        <para>The <see cref="P:System.Threading.Thread.CurrentUICulture" /> of the <see cref="P:System.Threading.Thread.CurrentThread" /> specifies the language the strings are requested for.</para>
+      </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IDisplayType.ItemType">
+      <summary>
+            Gets the <see cref="T:Tridion.ExternalContentLibrary.V2.EclItemTypes" /> the display type is associated with.
+            </summary>
+      <value>
+            The <see cref="T:Tridion.ExternalContentLibrary.V2.EclItemTypes" /> the display type is associated with.
+            </value>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IContentLibrary">
+      <summary>
+            Represents an external system providing data to SDL Tridion.
+            </summary>
+      <remarks>
+        <para>The <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibrary" /> is the starting point for implementing a Provider for the External
+            Content Library. 
+            </para>
+        <para>The External Content Library creates a single instance of the Provider's <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibrary" />
+            in its own <see cref="T:System.AppDomain" /> for each configured Mount Point to ensure static variables from one Mount Point
+            are not accessible from other Mount Points, even if they use the same Provider.</para>
+        <para>
+            When the External Content Library has created the instance of the Provider's <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibrary" />,
+            it calls <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.Initialize(System.String,System.String,Tridion.ExternalContentLibrary.V2.IHostServices)" /> before any other method is called.
+            </para>
+        <para>
+            With the exception of the <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.Initialize(System.String,System.String,Tridion.ExternalContentLibrary.V2.IHostServices)" /> method the implementation of <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibrary" />
+            must be tread safe. 
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.CreateContext(Tridion.ExternalContentLibrary.V2.IEclSession)">
+      <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> allowing operations to be performed on behalf of a user.
+            </summary>
+      <param name="session">The <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> the context should be created for. This gives access to the <see cref="T:Tridion.ExternalContentLibrary.V2.ITridionUser" />.</param>
+      <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> if the library is available to the specified user; <c>null</c> if the library is not available.</returns>
+      <remarks>
+            It is important the context is created as fast as possible as it is created frequently when the user is navigating the Tridion user interface. The provider can choose
+            to cache the data it needs to create the instance, but it should not cache the actual context instance as it will be disposed at the end of the current operation.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.Initialize(System.String,System.String,Tridion.ExternalContentLibrary.V2.IHostServices)">
+      <summary>
+            Provides initialization information from the External Content Library to the Provider.<see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibrary" /></summary>
+      <param name="mountPointId">The string ID of the IContentLibraryContract instance. Note that this is the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.MountPointId" /> part of the URI, not the full <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /></param>
+      <param name="configurationXmlElement">The XML element containing the configuration for the External Content Library. 
+            Providers can read custom elements and attributes to access configuration data specific to the Provider.</param>
+      <param name="hostServices">Provides access to a number of services available from the External Content Library host.</param>
+      <remarks>
+            Initialize is called only once immediately after the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibrary" /> is instantiated and before any other method is called. The instance is
+            used until the Tridion process hosting the Provider is terminated, or its <see cref="T:System.AppDomain" /> is recycled.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibrary.DisplayTypes">
+      <summary>
+            Gets a list of human-readable strings associated with the item types the Provider can insert into the Tridion user interface.
+            </summary>
+      <remarks>
+        <para>Use <see cref="P:System.Threading.Thread.CurrentUICulture" /> of the <see cref="P:System.Threading.Thread.CurrentThread" /> to determine which language the 
+            <see cref="P:Tridion.ExternalContentLibrary.V2.IDisplayType.DisplayText" /> should be returned in. The Provider should expect the display types
+            to be retrieved regularly, unless the result is time consuming to calculate in which case the Provider should cache the result and make sure
+            to take the requested language into account when caching.</para>
+        <para>Use <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateDisplayType(System.String,System.String,Tridion.ExternalContentLibrary.V2.EclItemTypes)" /> to create an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IDisplayType" />.</para>
+      </remarks>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.DisplayTypeId" />
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.GetIconImage(System.String,System.String,System.Int32)">
+      <summary>
+            Gets the icon for an item.
+            </summary>
+      <param name="theme">Specifies the theme specified in Tridion. If the icons are not theme-specific, you can ignore this parameter.</param>
+      <param name="iconIdentifier">The identifier of the icon. The value is from <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.IconIdentifier" />
+            or <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.IconIdentifier" />.</param>
+      <param name="iconSize">Size of the icon.</param>
+      <returns>The binary representation of a PNG, GIF, or JPG formatted image. PNG is the recommended format.</returns>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibrary.AddInViewVersion">
+      <summary>
+            Gets the version of the AddInView assembly
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem">
+      <summary>
+            Represents an item on the external system with all details loaded.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.ParentId">
+      <summary>
+            Gets the id of the parent item in the tree structure.
+            </summary>
+      <remarks>
+            For the top-level item, this is the URI of the Mount Point the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> is mounted in.
+            This can be created using <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateEclUri(System.Int32,System.String)" />.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.ModifiedBy">
+      <summary>
+            Gets a string identifying the user that last modified the item on the external system, or <c>null</c> if the information is not available.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.Created">
+      <summary>
+            Gets the date the item was created, or <c>null</c> if the date is not available.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.CreatedBy">
+      <summary>
+            Gets a string identifying the user that created the item on the external system, or <c>null</c> if the information is not available.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.MetadataXml">
+      <summary>
+            Gets or sets a string with the metadata associated with the item on the external system, or <c>null</c> if no metadata is available.
+            </summary>
+      <remarks>
+        <para>
+            The string must represent a valid XML document. The exact format of the XML string is determined by the Provider.
+            </para>
+        <para>
+            The property should only be changed if <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.CanUpdateMetadataXml" /> returns <c>true</c>. If <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.CanUpdateMetadataXml" /> returns <c>false</c>,
+            the Provider must throw a <c>NotSupportedException</c> when the property is changed.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.MetadataXmlSchema">
+      <summary>
+            Gets a definition of the fields in the <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.MetadataXml" />. Use <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateSchemaDefinition(System.String,System.String)" /> to create an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.ISchemaDefinition" />.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.CanGetViewItemUrl">
+      <summary>
+            Gets a value indicating whether the user can open this item.
+            </summary>
+      <remarks>
+            If the Provider returns <c>true</c><see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetViewItemUrl(Tridion.ExternalContentLibrary.V2.IEclUri)" />.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.Save(System.Boolean)">
+      <summary>
+            Saves the item.
+            </summary>
+      <param name="readback">If set to <c>true</c>, the Provider must return the saved item.</param>
+      <returns>If <paramref name="readback" /> is set to <c>true</c> the saved item is returned, else <c>null</c>.</returns>
+      <remarks>
+        <para>
+            When calling this method on a Provider that does not support the saving of items, the Provider must 
+            throw an <c>NotSupportedException</c>. For example, when the caller attempts to update one of the writeable properties 
+            such as <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.Title" />.
+            </para>
+        <para>
+            If the <paramref name="readback" /> parameter is <c>true</c>, the <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.Save(System.Boolean)" /> method must return the updated item.
+            For most Providers, this is simply the item itself (so return <c>this</c>), but if the external system supports changing
+            some of the saved values, for example through an event system, the item should be retrieved from the external system after the
+            save completes to ensure the latest values are available.
+            </para>
+        <para>
+            If the <paramref name="readback" /> parameter is <c>false</c> the <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.Save(System.Boolean)" /> method must return <c>null</c>.
+            </para>
+        <para>
+            If the external system supports transactions, it can use <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.GetTransactionPropagationToken" /> to
+            get a token that can be used with <see cref="M:System.Transactions.TransactionInterop.GetTransactionFromTransmitterPropagationToken(System.Byte[])" /> to join
+            a distributed transaction with the SDL Tridion system. If the Provider does not join the transaction, the data written
+            to SDL Tridion will automatically be rolled back if the Provider throws an exception from the <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.Save(System.Boolean)" /> method. In this
+            case, the data consistency is not guaranteed as the exception may have been thrown after the external system persisted
+            the changes.
+            </para>
+      </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.CanUpdateTitle">
+      <summary>
+            Gets a value indicating whether the user can modify the <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.Title" /> of the item.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.CanUpdateMetadataXml">
+      <summary>
+            Gets a value indicating whether the user can modify the <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.MetadataXml" /> of the item.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IEclSession">
+      <summary>
+            Represents a session with the External Content Library. It is the entry point to the External Content Library and is closely tied to a session of the Content Manager of SDL Tridion.
+            </summary>
+      <remarks>
+            Create <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession" /> using the <c>Tridion.ExternalContentLibrary.V1.SessionFactory</c> in the 
+            <c>Tridion.ExternalContentLibrary.dll</c> assembly and handle the disposing of the <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession" /> when no longer needed; it will
+            not be automatically disposed when the Content Manager session it is associated with is disposed.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IEclSession.TridionUser">
+      <summary>
+            Gets information about the Tridion Content Manager User that is associated with this session.
+            </summary>
+      <remarks>
+            As the External Content Library isolates eachPprovider in its own <see cref="T:System.AppDomain" />, it is not possible
+            to access the Tridion Content Manager User data directly.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclSession.GetContententLibraryUris(System.Int32)">
+      <summary>
+            Gets the URIs of the content libraries that are accessible in the specified Publication for the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclSession.TridionUser" />.
+            </summary>
+      <param name="publicationId">The ItemId part of a TCM URI representing a Tridion Publication.</param>
+      <returns>The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />.</returns>
+      <remarks>Use <see cref="M:Tridion.ExternalContentLibrary.V2.IEclSession.GetContentLibrary(Tridion.ExternalContentLibrary.V2.IEclUri)" /> to access the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />.</remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclSession.GetContententLibraryUris(System.String)">
+      <summary>
+            Gets the URIs of the content libraries that are accessible in the specified Tridion Publication for the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclSession.TridionUser" />.
+            </summary>
+      <param name="publicationTcmUri">A <see cref="T:System.String" /> on the form "tcm:0-x-1" representing a Tridion Publication.</param>
+      <returns>The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />.</returns>
+      <remarks>Use <see cref="M:Tridion.ExternalContentLibrary.V2.IEclSession.GetContentLibrary(Tridion.ExternalContentLibrary.V2.IEclUri)" /> to access the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />.</remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclSession.GetContentLibrary(Tridion.ExternalContentLibrary.V2.IEclUri)">
+      <summary>
+            Gets the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> associated with the specified URI.
+            </summary>
+      <param name="eclUri">The URI of the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />. The <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.ItemType" />
+            property must be <see cref="F:Tridion.ExternalContentLibrary.V2.EclItemTypes.MountPoint" />.</param>
+      <returns>The <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> with the specified URI.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclSession.TryGetEclUriFromTcmUri(System.String)">
+      <summary>
+            If the <paramref name="tcmUri" /> specifies an External Content Library stub Component, the <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the
+            corresponding <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" /> is returned.
+            </summary>
+      <param name="tcmUri">The TCM URI of a Tridion Component on the format "tcm:x-x" or "tcm:x-x-16".</param>
+      <returns>The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" /> the stub component links to, otherwise 
+            <c>null</c> if the specified Component is not an External Content Library stub Component.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclSession.TryGetTcmUriFromEclUri(Tridion.ExternalContentLibrary.V2.IEclUri)">
+      <summary>
+            Gets the URI of the Tridion Component that has been created as a stub for the specified <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" />, if any.
+            </summary>
+      <param name="eclUri">The URI of an <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" />.</param>
+      <returns>A string in the format "tcm:x-x" representing a Tridion Component if a stub has been created for this <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" />, otherwise
+            <c>null</c> if no stub has been created.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclSession.GetOrCreateTcmUriFromEclUri(Tridion.ExternalContentLibrary.V2.IEclUri)">
+      <summary>
+            Gets the URI of the Tridion Component that has been created as a stub for the specified <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" />. If the stub Component does not exist, it is created.
+            </summary>
+      <param name="eclUri">The URI of an <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" />.</param>
+      <returns>A string on the format "tcm:x-x" representing a Tridion Component.</returns>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IEclSession.HostServices">
+      <summary>
+            Gets access to a number of services exposed by the External Content Library host.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IEclUri">
+      <summary>
+            Identifies an item on the external system.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IEclUri.IsNullUri">
+      <summary>
+            Gets a value indicating if the URI has the value "tcm:null".
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IEclUri.PublicationId">
+      <summary>
+            Gets the id of the Tridion Publication this <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> belongs to.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IEclUri.MountPointId">
+      <summary>
+            Gets the <see cref="T:System.String" /> identifying the Mount Point the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> responsible for handling this URI is mounted in.
+            </summary>
+      <remarks>
+            The ID of each Mount Point specified in the ExternalContentLibrary.xml configuration file. It should not be changed once the Mount Point is in use.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IEclUri.ItemId">
+      <summary>
+            Gets a <see cref="T:System.String" /> with the Provider specified item id.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IEclUri.SubType">
+      <summary>
+            Gets a <see cref="T:System.String" /> with a Provider specified item type.
+            </summary>
+      <remarks>
+            The SubType is defined by the Provider. It cannot change over the life-time of an item. It is recommended to keep the SubType short and limit it to
+            lowercase letters (a-z) and numbers.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IEclUri.Version">
+      <summary>
+            Gets the version number part of the URL; <c>null</c> if the URL is not associated with a specific version.
+            </summary>
+      <remarks>
+            The version identifies the version number of the Tridion stub Component generated for this item (if any), not the
+            version on the remote system.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclUri.GetVersionlessUri">
+      <summary>
+            Gets the URI without the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.Version" /> Component.
+            </summary>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclUri.GetMountPointUri">
+      <summary>
+            Returns the URI of the Mount Point the item belongs to.
+            </summary>
+      <returns></returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclUri.GetInPublication(System.Int32)">
+      <summary>
+            Gets the URI for the same item in another Tridion Publication.
+            </summary>
+      <param name="publicationId">The id of the Tridion Publication to get the new URI for. This is the ItemId part of a Publication TCM URI, or the PublicationId of 
+            for a Tridion RepositoryLocalObject (for example a Component).</param>
+      <returns></returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IEclUri.GetWithVersion(System.Nullable{System.Int32})">
+      <summary>
+            Gets the URI for the same item with another version.
+            </summary>
+      <param name="version">The version number to get the new URI for.</param>
+      <returns></returns>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IEclUri.ItemType">
+      <summary>
+            Gets the <see cref="T:Tridion.ExternalContentLibrary.V2.EclItemTypes" /> specifying the External Content Library item type.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext">
+      <summary>
+            The <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> manages a set of operations performed on the external system for a user.
+            </summary>
+      <remarks>
+        <para>
+            When writing SDL Tridion templates or event handlers the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> is available from the 
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IEclSession.GetContentLibrary(Tridion.ExternalContentLibrary.V2.IEclUri)" /> method.
+            </para>
+        <para>
+            When implementing a provider, the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> is always instantiated by the provider
+            when the method <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.CreateContext(Tridion.ExternalContentLibrary.V2.IEclSession)" /> is called by the External Content Library. The provider can use the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclSession.TridionUser" />
+            property on the <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession" /> passed to the <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.CreateContext(Tridion.ExternalContentLibrary.V2.IEclSession)" /> method
+            to identify the Tridion User initiating the operations.
+            </para>
+        <para>
+            The External Content Library will then use the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> returned from
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.CreateContext(Tridion.ExternalContentLibrary.V2.IEclSession)" /> to perform one or more actions on the external system before it finally
+            disposes the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />.
+            </para>
+        <para>The lifetime of a <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> is short. It can for example be a single
+            read operation initiated by the user opening an external item in SDL Tridion, or a number of requests made on an SDL Tridion
+            template rendering a Page containing multiple external items. The objects returned from the methods and properties
+            on <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> will not be used in connection with any other context, and with the exception
+            of the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentResult" /> returned from <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetContent(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" /> the
+            External Content Library will not call any methods or properties on any objects returned from the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />
+            after it has been disposed.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,Tridion.ExternalContentLibrary.V2.EclItemTypes)">
+      <summary>
+            Gets an <see cref="T:Tridion.ExternalContentLibrary.V2.IFolderContent" /> representing the content of an external content folder or mount point. This list is used to build a tree structure when the user browse the content of the external library.
+            </summary>
+      <param name="parentFolderUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the parent item. If <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.ItemType" /> is <see cref="F:Tridion.ExternalContentLibrary.V2.EclItemTypes.MountPoint" /> the top level items are requested.</param>
+      <param name="itemTypes">Filters the item types to return. This can be used to for example only retrieve Folders for building up the tree structure.</param>
+      <param name="pageIndex">The 0 based index of the page to retrieve if the folder supports pagination.</param>
+      <returns>
+            A list of child items that should be displayed under the specified Folder.
+            </returns>
+      <remarks>
+            A provider can use <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IContentLibraryListItem},System.Boolean,System.Boolean)" />
+            or one of the overloaded methods to initialize an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IFolderContent" />.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.IconIdentifier">
+      <summary>
+            Gets the a string identifying the icon to use for this External Content Library. This identifier will be passed to <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.GetIconImage(System.String,System.String,System.Int32)" />.
+            If <c>null</c> is returned, the default icon will be used.
+            </summary>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetThumbnailImage(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,System.Int32)">
+      <summary>
+            Gets the thumbnail image for the specified item in the specified size.
+            </summary>
+      <param name="eclUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> identifying the item a thumbnail should be retrieved for.</param>
+      <param name="maxWidth">The maximum width if the thumbnail in pixels.</param>
+      <param name="maxHeight">The maximum height if the thumbnail in pixels.</param>
+      <returns>A byte array containing the thumbnail image in PNG, JPG, or GIF format, or <c>null</c> if the default thumbnail generator should be used (see remarks).</returns>
+      <remarks>
+        <para>Caching if the generated thumbnail image should be done by the caller, not by the provider. The provider might cache any intermediate data it retrieves.
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" /> and
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Int32,System.Int32,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" />
+             can be used to generate the thumbnail.</para>
+        <para>It is valid to return <c>null</c> if the item the thumbnail is requested returns an <see cref="T:Tridion.ExternalContentLibrary.V2.IContentResult" /> that can be used to retrieve a png, jpg, bmp, or gif image when <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetContent(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" /> is called.
+            </para>
+      </remarks>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.IsThumbnailAvailable" />
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetItem(Tridion.ExternalContentLibrary.V2.IEclUri)">
+      <summary>
+            Gets the item with the specified <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" />.
+            </summary>
+      <param name="eclUri">The URI specifying the item to get.</param>
+      <returns>The <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" /> for the specified URI. If the item is not available or not accessible for the <see cref="T:Tridion.ExternalContentLibrary.V2.ITridionUser" />
+            of the current <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession" /> the provider must throw an exception.</returns>
+      <remarks>
+            To check if the user can read an item without having an exception thrown call <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetItems(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IEclUri})" /> with a single item and check if
+            it is returned.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetItems(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IEclUri})">
+      <summary>
+            Gets the items with the specified <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri">URIs</see> if they are available.
+            </summary>
+      <param name="eclUris">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri">URIs</see> of the items to retrieve.</param>
+      <returns>A <see cref="T:System.Collections.Generic.List`1" /> of <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" /> containing the items that exists and the <see cref="T:Tridion.ExternalContentLibrary.V2.ITridionUser" />
+            of the current <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession" /> has access to.</returns>
+      <remarks>
+        <para>If any other error than the item does not exist or is not accessible for the <see cref="T:Tridion.ExternalContentLibrary.V2.ITridionUser" />
+            of the current <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession" /> occurs, an exception must be thrown.</para>
+        <para>The provider should expect this method to be called for the same item across multiple Tridion publications.</para>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.FindItem(Tridion.ExternalContentLibrary.V2.IEclUri)">
+      <summary>
+            Finds the path to an item though the folder structure.
+            </summary>
+      <param name="eclUri">The URI of the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" /> to get the path for.</param>
+      <returns>
+        <c>null</c> if the path should be resolved by calling <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetItem(Tridion.ExternalContentLibrary.V2.IEclUri)" /> and reading the <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.ParentId" /> property recursively,
+            or all ascendants of the item starting with the first child Item of the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> and ending with the requested Item itself.</returns>
+      <remarks>This method should only be implemented in a provider if the provider facilitates a faster way to determine the full path than getting each
+            item one by one and reading the property <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.ParentId" /> recursively.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetViewItemUrl(Tridion.ExternalContentLibrary.V2.IEclUri)">
+      <summary>
+            Gets an URL that can be used to view and potentially edit the item on the external system.
+            </summary>
+      <param name="eclUri">The URI of the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryItem" /> to get the URI for.</param>
+      <returns>An URL that can be used to view the Item.</returns>
+      <remarks>
+        <para>
+            The method should always return an URL for items that returns <c>true</c> from <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.CanGetViewItemUrl" />.
+            </para>
+        <para>
+            The retrieved URL can contain a token that is only valid for a limited time period.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetUploadMultimediaItemsUrl(Tridion.ExternalContentLibrary.V2.IEclUri)">
+      <summary>
+            Gets an URL to a page that can be used to upload new items on the external system.
+            </summary>
+      <param name="parentFolderUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the parent folder the items should be uploaded to.</param>
+      <returns>An URL to a page that can be used to upload items to the external system.</returns>
+      <remarks>
+        <para>
+            The method should always return an URL for items that returns <c>true</c> from <see cref="P:Tridion.ExternalContentLibrary.V2.IFolderContent.CanGetUploadMultimediaItemsUrl" />,
+            <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.CanGetUploadMultimediaItemsUrl" />, or <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.CanGetUploadMultimediaItemsUrl(System.Int32)" />.
+            </para>
+        <para>
+            The retrieved URL can contain a token that is only valid for a limited time period.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.CanGetUploadMultimediaItemsUrl(System.Int32)">
+      <summary>
+            Gets a value indicating whether the user can upload new multimedia items as direct child items of the mount point.
+            </summary>
+      <param name="publicationId">The id of the Tridion Publication items will be uploaded from.</param>
+      <remarks>
+            The returned value must be identical to <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.CanGetUploadMultimediaItemsUrl" />
+            If the value is set to <c>true</c>, the Provider must return the URL of a page where the user can
+            upload the items from the method <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetUploadMultimediaItemsUrl(Tridion.ExternalContentLibrary.V2.IEclUri)" />.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.CanSearch(System.Int32)">
+      <summary>
+            Gets a value indicating whether the provider supports searching in the mount point.
+            </summary>
+      <param name="publicationId">The id of the Tridion Publication search will be performed for.</param>
+      <returns>
+        <c>true</c> if search should be enabled for the mount point in the specified Publication; otherwise, <c>false</c>.
+            </returns>
+      <remarks>
+            The returned value must be identical to the value set in <see cref="P:Tridion.ExternalContentLibrary.V2.IFolderContent.CanGetUploadMultimediaItemsUrl" />
+            when getting the list of child items of the mount point.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.Search(Tridion.ExternalContentLibrary.V2.IEclUri,System.String,System.Int32,System.Int32)">
+      <summary>
+            Performs a search for external Items.
+            </summary>
+      <param name="contextUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the Folder or Mount Point the search should be performed from.</param>
+      <param name="searchTerm">The term to search for.</param>
+      <param name="pageIndex">The 0 based index of the page to retrieve if the search result supports pagination.</param>
+      <param name="numberOfItems">The number of items the user requested as the search result. If the provider supports pagination</param>
+      <returns>
+            A list of <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem" /> matching the search term.
+            </returns>
+      <remarks>
+        <para>
+            This method should only be called when <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.CanSearch(System.Int32)" />, <see cref="P:Tridion.ExternalContentLibrary.V2.IFolderContent.CanSearch" />, or <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.CanSearch(System.Int32)" />
+            is <c>true</c> for the item identified by the <paramref name="contextUri" />.
+              </para>
+        <para>
+            Ideally the provider should perform the search recursively across all subfolders of the Folder or Mount Point identified by the <paramref name="contextUri" />. The search
+            should include the title and metadata on the external item.
+              </para>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.StubComponentCreated(Tridion.ExternalContentLibrary.V2.IEclUri,System.String)">
+      <summary>
+            Notifies the provider that a stub Component has been created.
+            </summary>
+      <param name="eclUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the external item the stub was created for.</param>
+      <param name="tcmUri">The TCM URI of the stub component that was created.</param>
+      <remarks>
+        <para>
+            This method will be called by the External Content Library when a SDL Tridion stub Component is created for an item stored on the
+            external system. If the Provider does not need to perform any action when a stub component is created it should simply leave
+            the method body empty.
+            </para>
+        <para>
+            The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclSession" /> specified when the External Content Library creates the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />
+            will always have the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclSession.TridionUser" /> set to the user configured as the privileged user for the mount point in
+            the <c>ExternalContentLibrary.xml</c> configuration file.
+            </para>
+        <para>
+            If the external system supports transactions, it can use <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.GetTransactionPropagationToken" /> to
+            get a token that can be used with <see cref="M:System.Transactions.TransactionInterop.GetTransactionFromTransmitterPropagationToken(System.Byte[])" /> to join
+            a distributed transaction with the SDL Tridion system. If the Provider does not join the transaction, the data written
+            to SDL Tridion will automatically be rolled back if the Provider throws an exception from the <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.StubComponentCreated(Tridion.ExternalContentLibrary.V2.IEclUri,System.String)" /> method. In this
+            case, the data consistency is not guaranteed as the exception may have been thrown after the external system persisted
+            the changes.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.StubComponentDeleted(Tridion.ExternalContentLibrary.V2.IEclUri,System.String)">
+      <summary>
+            Notifies the provider that a stub Component has been deleted.
+            </summary>
+      <param name="eclUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the external item the stub represented.</param>
+      <param name="tcmUri">The TCM URI of the stub component that was deleted.</param>
+      <remarks>
+        <para>
+            This method will be called by the External Content Library when a SDL Tridion stub Component is deleted for an item stored on the
+            external system. If the Provider does not need to perform any action when a stub component is deleted it should simply leave
+            the method body empty.
+            </para>
+        <para>
+            If the external system supports transactions, it can use <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.GetTransactionPropagationToken" /> to
+            get a token that can be used with <see cref="M:System.Transactions.TransactionInterop.GetTransactionFromTransmitterPropagationToken(System.Byte[])" /> to join
+            a distributed transaction with the SDL Tridion system. If the Provider does not join the transaction, the data written
+            to SDL Tridion will automatically be rolled back if the Provider throws an exception from the <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.StubComponentCreated(Tridion.ExternalContentLibrary.V2.IEclUri,System.String)" /> method. In this
+            case, the data consistency is not guaranteed as the exception may have been thrown after the external system persisted
+            the changes.
+            </para>
+      </remarks>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.EclItemTypes">
+      <summary>
+            Specifies the type of the External Content Library item.
+            </summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.EclItemTypes.Undefined">
+      <summary>
+            Undefined item type. Only valid for the URI "tcm:null".
+            </summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.EclItemTypes.MountPoint">
+      <summary>
+            Identifies a Mount Point. Mount Points can contain <see cref="F:Tridion.ExternalContentLibrary.V2.EclItemTypes.Folder" /> and <see cref="F:Tridion.ExternalContentLibrary.V2.EclItemTypes.File" /> items.
+            </summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.EclItemTypes.Folder">
+      <summary>
+            Identifies a folder. Folders can contain other folders and <see cref="F:Tridion.ExternalContentLibrary.V2.EclItemTypes.File" /> items.
+            </summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.EclItemTypes.File">
+      <summary>
+            Identifies a file representing a multimedia item.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IFolderContent">
+      <summary>
+            Represents the content of a folder retrieved with <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,Tridion.ExternalContentLibrary.V2.EclItemTypes)" />. 
+            </summary>
+      <seealso cref="T:Tridion.ExternalContentLibrary.V2.IPaginatedFolderContent" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFolderContent.ParentUri">
+      <summary>
+            Gets the URI of the folder or Mount Point the content belongs to.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFolderContent.ChildItems">
+      <summary>
+            A list of the items contained in the folder.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFolderContent.CanGetUploadMultimediaItemsUrl">
+      <summary>
+            Gets a value indicating whether the user can upload new multimedia items to the list.
+            </summary>
+      <remarks>
+            The returned value must be identical to the value set in <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.CanGetUploadMultimediaItemsUrl" />
+            when getting the list of child items of the mount point or folder. If the value is set to <c>true</c>, the Provider must return the URL of a page where the user can
+            upload the items from the method <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetUploadMultimediaItemsUrl(Tridion.ExternalContentLibrary.V2.IEclUri)" />.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFolderContent.CanSearch">
+      <summary>
+            Gets a value indicating whether the provider supports searching in the folder.
+            </summary>
+      <remarks>
+            The returned value must be identical to the value set in <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.CanGetUploadMultimediaItemsUrl" />
+            when getting the list of child items of the mount point or folder.
+            </remarks>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IHostServices">
+      <summary>
+            Exposes a number of services available to templates and Providers.
+            </summary>
+      <remarks>
+            Access the <see cref="T:Tridion.ExternalContentLibrary.V2.IHostServices" /> instance through
+            <see cref="P:Tridion.ExternalContentLibrary.V2.IEclSession.HostServices" />. Providers can also access it through the
+            <c>hostServices</c> parameter of the <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.Initialize(System.String,System.String,Tridion.ExternalContentLibrary.V2.IHostServices)" /> method.
+            The implementation of <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibrary.Initialize(System.String,System.String,Tridion.ExternalContentLibrary.V2.IHostServices)" /> can expose this 
+            <see cref="T:Tridion.ExternalContentLibrary.V2.IHostServices" /> instance through a static property making it available to
+            all classes in the Provider.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})">
+      <summary>
+            Builds a thumbnail with an image, optionally using one or more overlay images.
+            </summary>
+      <param name="width">The width of the thumbnail image in pixels.</param>
+      <param name="height">The height of the thumbnail image in pixels..</param>
+      <param name="imageStream">A stream the image used as a background for the thumbnail can be read from.</param>
+      <param name="thumbnailOverlays">An optional list of images to overlay on the thumbnail.</param>
+      <returns>
+            A byte array containing the thumbnail in png format.
+            </returns>
+      <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetThumbnailImage(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,System.Int32)" />
+      <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailOverlay(System.Int32,System.Int32,System.IO.Stream)" />
+      <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailOverlay(System.Int32,System.Int32,System.Int32,System.Int32,System.IO.Stream)" />
+      <remarks>The image is placed in the center of the thumbnail. If the image is larger than the thumbnail, it will be scaled to fit. If the
+            image is smaller than the thumbnail, it will keep its size leaving the edges of the thumbnail transparent.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Int32,System.Int32,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})">
+      <summary>
+            Builds a thumbnail of an image, optionally using one or more overlay images.
+            </summary>
+      <param name="width">The width of the thumbnail image in pixels.</param>
+      <param name="height">The height of the thumbnail image in pixels.</param>
+      <param name="imageStream">A stream the image used as a background for the thumbnail can be read from.</param>
+      <param name="maxImageHeight">The maximum height in pixels the image in the <paramref name="imageStream" /> can be scaled to.</param>
+      <param name="maxImageWidth">The maximum width in pixels the image in the <paramref name="imageStream" /> can be scaled to.</param>
+      <param name="thumbnailOverlays">An optional list of images to overlay on the thumbnail.</param>
+      <returns>
+            A byte array containing the thumbnail in png format.
+            </returns>
+      <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetThumbnailImage(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,System.Int32)" />
+      <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailOverlay(System.Int32,System.Int32,System.IO.Stream)" />
+      <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailOverlay(System.Int32,System.Int32,System.Int32,System.Int32,System.IO.Stream)" />
+      <remarks>
+        <remarks>The image is placed in the center of the thumbnail. If the image is larger than the thumbnail, it will be scaled to fit. If the
+            image is smaller than the thumbnail, it will be scaled up to the size specified in <paramref name="maxImageWidth" />
+            and <paramref name="maxImageHeight" />.
+            </remarks>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailOverlay(System.Int32,System.Int32,System.IO.Stream)">
+      <summary>
+            Defines an overlay for a thumbnail created with
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" /> or
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Int32,System.Int32,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" /></summary>
+      <param name="x">The x position, in pixels, from the left side of the thumbnail where the left side of the image should be rendered.</param>
+      <param name="y">The y position, in pixels, from the top of the thumbnail where the top of the image should be rendered.</param>
+      <param name="imageStream">The image stream containing the overlay image in png, jpg, bmp, or gif format. The stream must remain open until after the call to 
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" /> or
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Int32,System.Int32,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" /> .</param>
+      <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IThumbnailOverlay" /> defining the thumbnail to use with
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" /> and
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Int32,System.Int32,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" />.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailOverlay(System.Int32,System.Int32,System.Int32,System.Int32,System.IO.Stream)">
+      <summary>
+            Creates the thumbnail overlay.
+            </summary>
+      <param name="x">The x position, in pixels, from the left side of the thumbnail where the left side of the image should be rendered.</param>
+      <param name="y">The y position, in pixels, from the top of the thumbnail where the top of the image should be rendered.</param>
+      <param name="width">The width, in pixels, the overlay should be rendered with.</param>
+      <param name="height">The height, in pixels, the overlay should be rendered with.</param>
+      <param name="imageStream">The image stream containing the overlay image in png, jpg, bmp, or gif format. The stream must remain open until after the call to
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" /> and
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Int32,System.Int32,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" />.</param>
+      <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IThumbnailOverlay" /> defining the thumbnail for use with
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" /> and
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Int32,System.Int32,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" />.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateEclUri(System.Int32,System.String,System.String,System.String,Tridion.ExternalContentLibrary.V2.EclItemTypes)">
+      <summary>
+            Creates an instance of an <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" />.
+            </summary>
+      <param name="publicationId">The ItemId part of a TCM URI for a Tridion Publication.</param>
+      <param name="mountPointId">The id of the Mount Point the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> is mounted in.</param>
+      <param name="itemId">A <see cref="T:System.String" /> specifying the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.ItemId" /> part of the <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" />.</param>
+      <param name="subType">A <see cref="T:System.String" /> specifying the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.SubType" /> part of the <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" />.</param>
+      <param name="itemType">An <see cref="T:Tridion.ExternalContentLibrary.V2.EclItemTypes" /> specifying the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.ItemType" /> part of the <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" />.</param>
+      <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> initialized with the specified values.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateEclUri(System.Int32,System.String,System.String,System.String,Tridion.ExternalContentLibrary.V2.EclItemTypes,System.Nullable{System.Int32})">
+      <summary>
+            Creates an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" />.
+            </summary>
+      <param name="publicationId">The ItemId part of a TCM URI for a Tridion Publication.</param>
+      <param name="mountPointId">The id of the Mount Point the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> is mounted in.</param>
+      <param name="itemId">A <see cref="T:System.String" /> specifying the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.ItemId" /> part of the <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /></param>
+      <param name="subType">A <see cref="T:System.String" /> specifying the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.SubType" /> part of the <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /></param>
+      <param name="itemType">An <see cref="T:Tridion.ExternalContentLibrary.V2.EclItemTypes" /> specifying the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.ItemType" /> part of the <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /></param>
+      <param name="version">The specific version of the Tridion stub Component.</param>
+      <returns>
+            An <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> initialized with the specified values.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateEclUri(System.Int32,System.String)">
+      <summary>
+            Creates an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> representing an <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />.
+            </summary>
+      <param name="publicationId">The ItemId part of a TCM URI for a Tridion Publication.</param>
+      <param name="mountPointId">The id of the Mount Point the <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" /> is mounted in.</param>
+      <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> representing the an <see cref="T:Tridion.ExternalContentLibrary.V2.IContentLibraryContext" />.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateEclUri(System.String)">
+      <summary>
+            Creates an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> from a string representation.
+            </summary>
+      <param name="eclUriStringRepresentation">The string representation of an <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> in the format "ecl:pubid-mountpointid-itemid-subtype-type".</param>
+      <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> corresponding to the specified <see cref="T:System.String" /> representation.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.IsNullOrNullEclUri(Tridion.ExternalContentLibrary.V2.IEclUri)">
+      <summary>
+            Indicates whether the URL is null or an null URI (ecl:null).
+            </summary>
+      <param name="eclUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> to check.</param>
+      <returns>
+        <c>true</c> if the URI is null or the null URI (ecl:null); otherwise, <c>false</c>.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.TryCreateEclUri(System.String)">
+      <summary>
+            Creates an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> from a string representation if the string represents a valid URI.
+            </summary>
+      <param name="eclUriStringRepresentation">The string representation of an <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" />.</param>
+      <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> corresponding to the specified <see cref="T:System.String" /> representation, otherwise <c>null</c> if the string does not represent a valid <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /></returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateDisplayType(System.String,System.String,Tridion.ExternalContentLibrary.V2.EclItemTypes)">
+      <summary>
+            Creates an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IDisplayType" /> for use with <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibrary.DisplayTypes" />.
+            </summary>
+      <param name="id">The id identifying the display type.</param>
+      <param name="displayText">The text to display in the UI for the type.</param>
+      <param name="itemType">The <see cref="T:Tridion.ExternalContentLibrary.V2.EclItemTypes" /> this display type is associated with.</param>
+      <returns>An initialized instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IDisplayType" />.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateContentResult(System.IO.Stream,System.Int64,System.String)">
+      <summary>
+            Creates an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IContentResult" /> that can be used with <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetContent(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" />.
+            </summary>
+      <param name="stream">The stream that can be used to read the result.</param>
+      <param name="contentLength">The length of the content in bytes.</param>
+      <param name="contentType">The type of the content. The type should be identical to <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.MimeType" />.</param>
+      <returns>
+            An initialized instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IContentResult" /> that can be used to read the content of an item.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IContentLibraryListItem},System.Boolean,System.Boolean)">
+      <summary>
+            Creates an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IFolderContent" /> that can be used with <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,Tridion.ExternalContentLibrary.V2.EclItemTypes)" />.
+            </summary>
+      <param name="parentUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the folder the content belongs to.</param>
+      <param name="childItems">A list of the folder's child items.</param>
+      <param name="canGetUploadMultimediaItemsUrl">If the value is set to <c>true</c> the Provider must return the URL of a page where the user can
+            upload the items from the method <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetUploadMultimediaItemsUrl(Tridion.ExternalContentLibrary.V2.IEclUri)" />.</param>
+      <param name="canSearch">If set to <c>true</c> the Provider must support searching for content within the folder.</param>
+      <returns>
+            An initialized instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IFolderContent" /> that represent the content of a folder.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,System.Int32,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IContentLibraryListItem},System.Boolean,System.Boolean)">
+      <summary>
+            Creates an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IFolderContent" /> that can be used with <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,Tridion.ExternalContentLibrary.V2.EclItemTypes)" />.
+            </summary>
+      <param name="parentUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the folder the content belongs to.</param>
+      <param name="pageIndex">The zero based index of the returned page of child items.</param>
+      <param name="totalNumberOfPages">The total number of available pages with child items.</param>
+      <param name="childItems">A list of the folder's child items.</param>
+      <param name="canGetUploadMultimediaItemsUrl">If the value is set to <c>true</c> the Provider must return the URL of a page where the user can
+            upload the items from the method <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetUploadMultimediaItemsUrl(Tridion.ExternalContentLibrary.V2.IEclUri)" />.</param>
+      <param name="canSearch">If set to <c>true</c> the Provider must support searching for content within the folder.</param>
+      <returns>
+            An initialized instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IPaginatedFolderContent" /> that represent the content of a folder.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,System.Boolean,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IContentLibraryListItem},System.Boolean,System.Boolean)">
+      <summary>
+            Creates an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IFolderContent" /> that can be used with <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,Tridion.ExternalContentLibrary.V2.EclItemTypes)" />.
+            </summary>
+      <param name="parentUri">The <see cref="T:Tridion.ExternalContentLibrary.V2.IEclUri" /> of the folder the content belongs to.</param>
+      <param name="pageIndex">The zero based index of the returned page of child items.</param>
+      <param name="isLastPage">Specifies if this is the last page of child items available.</param>
+      <param name="childItems">A list of the folder's child items.</param>
+      <param name="canGetUploadMultimediaItemsUrl">If the value is set to <c>true</c> the Provider must return the URL of a page where the user can
+            upload the items from the method <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetUploadMultimediaItemsUrl(Tridion.ExternalContentLibrary.V2.IEclUri)" />.</param>
+      <param name="canSearch">If set to <c>true</c> the Provider must support searching for content within the folder.</param>
+      <returns>
+            An initialized instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IPaginatedFolderContent" /> that represent the content of a folder.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateSchemaDefinition(System.String,System.String)">
+      <summary>
+            Creates a schema definition that can be used with <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.MetadataXmlSchema" />.
+            </summary>
+      <param name="rootElementName">Name of the root element.</param>
+      <param name="xmlNamespaceUrl">The XML namespace URL.</param>
+      <returns></returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateSingleLineTextFieldDefinition(System.String,System.String,System.Int32,System.Nullable{System.Int32},System.Int32,System.Nullable{System.Int32},System.String,Tridion.ExternalContentLibrary.V2.FieldListType,System.Int32,System.String)">
+      <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition" /> that represents a single text field.
+            </summary>
+      <param name="xmlElementName">Gets the local name of the XML element the field displays the value for.</param>
+      <param name="label">Gets the label that will be displayed in the UI for the field.</param>
+      <param name="minOccurs">Gets the minimum number of items that must be entered when a user edit the field. If set to 0 the field is optional.</param>
+      <param name="maxOccurs">Gets the maximum number of items that can be entered when the user edit the fields. If 1 the field represents a single value; else the field will be a list of values.</param>
+      <param name="minLength">The minimum length of the text.</param>
+      <param name="maxLength">The maximum length of the text.</param>
+      <param name="pattern">Gets a regular expression pattern to constrain the value.</param>
+      <param name="listType">Determines how the user interface should render the multiple choices for <see cref="T:Tridion.ExternalContentLibrary.V2.IFieldDefinition">fields</see> with multiple allowed values.</param>
+      <param name="listHeight">Gets the height of the rendered list if the <see cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.AllowedValues" /> is not empty. Use <paramref name="listType" /> to specify how the list should be rendered.</param>
+      <param name="customUrl">the custom URL of the field. If a custom URL is defined, the CME hyperlinks the label using this URL as hyperlink.</param>
+      <returns>
+            An <see cref="T:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition" /> that can be added to <see cref="P:Tridion.ExternalContentLibrary.V2.ISchemaDefinition.Fields" />.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateDateFieldDefinition(System.String,System.String,System.Int32,System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Boolean,System.Nullable{System.DateTime},System.Boolean,System.String,Tridion.ExternalContentLibrary.V2.FieldListType,System.Int32,System.String)">
+      <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition" /> that represents a single text field.
+            </summary>
+      <param name="xmlElementName">Gets the local name of the XML element the field displays the value for.</param>
+      <param name="label">Gets the label that will be displayed in the UI for the field.</param>
+      <param name="minOccurs">Gets the minimum number of items that must be entered when a user edit the field. If set to 0 the field is optional.</param>
+      <param name="maxOccurs">Gets the maximum number of items that can be entered when the user edit the fields. If 1 the field represents a single value; else the field will be a list of values.</param>
+      <param name="minValue">The minimum valid date.</param>
+      <param name="isMinValueExclusive">Indicates whether the specified minimum value is exclusive or inclusive.</param>
+      <param name="maxValue">The maximum valid date.</param>
+      <param name="isMaxValueExclusive">Indicates whether the specified maximum value is exclusive or inclusive.</param>
+      <param name="pattern">Gets a regular expression pattern to constrain the value.</param>
+      <param name="listType">Determines how the user interface should render the multiple choices for <see cref="T:Tridion.ExternalContentLibrary.V2.IFieldDefinition">fields</see> with multiple allowed values.</param>
+      <param name="listHeight">Gets the height of the rendered list if the <see cref="P:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition.AllowedValues" /> is not empty. Use <paramref name="listType" /> to specify how the list should be rendered.</param>
+      <param name="customUrl">the custom URL of the field. If a custom URL is defined, the CME hyperlinks the label using this URL as hyperlink.</param>
+      <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IDateFieldDefinition" /> that can be added to <see cref="P:Tridion.ExternalContentLibrary.V2.ISchemaDefinition.Fields" />.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateNumberFieldDefinition(System.String,System.String,System.Int32,System.Nullable{System.Int32},System.Nullable{System.Double},System.Boolean,System.Nullable{System.Double},System.Boolean,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,Tridion.ExternalContentLibrary.V2.FieldListType,System.Int32,System.String)">
+      <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition" /> that represents a single text field.
+            </summary>
+      <param name="xmlElementName">Gets the local name of the XML element the field displays the value for.</param>
+      <param name="label">Gets the label that will be displayed in the UI for the field.</param>
+      <param name="minOccurs">Gets the minimum number of items that must be entered when a user edit the field. If set to 0 the field is optional.</param>
+      <param name="maxOccurs">Gets the maximum number of items that can be entered when the user edit the fields. If 1 the field represents a single value; else the field will be a list of values.</param>
+      <param name="minValue">The minimum valid number.</param>
+      <param name="isMinValueExclusive">Indicates whether the specified minimum value is exclusive or inclusive.</param>
+      <param name="maxValue">The maximum valid number.</param>
+      <param name="isMaxValueExclusive">Indicates whether the specified maximum value is exclusive or inclusive.</param>
+      <param name="totalDigits">The constraint on the total number of digits or <c>null</c> if a constraint on the total number of digits is not defined.</param>
+      <param name="fractionDigits">The constraints on the number of fraction digits or <c>null</c> null, a constraint on the number of fraction digits is not defined. If only integer values are allowed, this constraint should be set to <c>0</c>.</param>
+      <param name="pattern">Gets a regular expression pattern to constrain the value.</param>
+      <param name="listType">Determines how the user interface should render the multiple choices for <see cref="T:Tridion.ExternalContentLibrary.V2.IFieldDefinition">fields</see> with multiple allowed values.</param>
+      <param name="listHeight">Gets the height of the rendered list if the <see cref="P:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition.AllowedValues" /> is not empty. Use <paramref name="listType" /> to specify how the list should be rendered.</param>
+      <param name="customUrl">the custom URL of the field. If a custom URL is defined, the CME hyperlinks the label using this URL as hyperlink.</param>
+      <returns>
+            An <see cref="T:Tridion.ExternalContentLibrary.V2.INumberFieldDefinition" /> that can be added to <see cref="P:Tridion.ExternalContentLibrary.V2.ISchemaDefinition.Fields" />.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateMultiLineTextFieldDefinition(System.String,System.String,System.Int32,System.Nullable{System.Int32},System.Int32,System.String)">
+      <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V2.IMultiLineTextFieldDefinition" /> that represents a multi line text field.
+            </summary>
+      <param name="xmlElementName">Gets the local name of the XML element the field displays the value for.</param>
+      <param name="label">Gets the label that will be displayed in the UI for the field.</param>
+      <param name="minOccurs">Gets the minimum number of items that must be entered when a user edit the field. If set to 0 the field is optional.</param>
+      <param name="maxOccurs">Gets the maximum number of items that can be entered when the user edit the fields. If 1 the field represents a single value; else the field will be a list of values.</param>
+      <param name="height">The height (in number of lines) of the text area in the form-based user interface.</param>
+      <param name="customUrl">The custom URL of the field. If a custom URL is defined, the CME hyperlinks the label using this URL as hyperlink.</param>
+      <returns>
+            An <see cref="T:Tridion.ExternalContentLibrary.V2.IMultiLineTextFieldDefinition" /> that can be added to <see cref="P:Tridion.ExternalContentLibrary.V2.ISchemaDefinition.Fields" />.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateXhtmlTextFieldDefinition(System.String,System.String,System.Int32,System.Nullable{System.Int32},System.Int32,System.String,System.String)">
+      <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V2.IXhtmlFieldDefinition" /> that represents an XML field.
+            </summary>
+      <param name="xmlElementName">Gets the local name of the XML element the field displays the value for.</param>
+      <param name="label">Gets the label that will be displayed in the UI for the field.</param>
+      <param name="minOccurs">Gets the minimum number of items that must be entered when a user edit the field. If set to 0 the field is optional.</param>
+      <param name="maxOccurs">Gets the maximum number of items that can be entered when the user edit the fields. If 1 the field represents a single value; else the field will be a list of values.</param>
+      <param name="height">The height (in number of lines) of the text area in the form-based user interface.</param>
+      <param name="filterXslt">A string with the Filter XSLT used by the Tridion user interface remove any invalid elements or attributes. <c>null</c> if no filtering should be done in the user interface.</param>
+      <param name="customUrl">The custom URL of the field. If a custom URL is defined, the CME hyperlinks the label using this URL as hyperlink.</param>
+      <returns>
+            An <see cref="T:Tridion.ExternalContentLibrary.V2.IXhtmlFieldDefinition" /> that can be added to <see cref="P:Tridion.ExternalContentLibrary.V2.ISchemaDefinition.Fields" />.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateFieldGroupDefinition(System.String,System.String,System.Int32,System.Nullable{System.Int32},System.String)">
+      <summary>
+            Creates an <see cref="T:Tridion.ExternalContentLibrary.V2.IFieldGroupDefinition" /> that represents a group of fields.
+            </summary>
+      <param name="xmlElementName">Gets the local name of the XML element the field displays the value for.</param>
+      <param name="label">Gets the label that will be displayed in the UI for the field.</param>
+      <param name="minOccurs">Gets the minimum number of items that must be entered when a user edit the field. If set to 0 the field is optional.</param>
+      <param name="maxOccurs">Gets the maximum number of items that can be entered when the user edit the fields. If 1 the field represents a single value; else the field will be a list of values.</param>
+      <param name="customUrl">The custom URL of the field. If a custom URL is defined, the CME hyperlinks the label using this URL as hyperlink.</param>
+      <returns>An <see cref="T:Tridion.ExternalContentLibrary.V2.IFieldGroupDefinition" /> that can be added to <see cref="P:Tridion.ExternalContentLibrary.V2.ISchemaDefinition.Fields" />.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.GetIcon(System.String,System.String,System.String,System.Int32)">
+      <summary>
+            Loads an icon from a folder structure based on the selected theme, size, and name.
+            </summary>
+      <param name="basePath">The path to search for icons in.</param>
+      <param name="theme">The UI theme.</param>
+      <param name="iconName">The name of the icon to retrieve.</param>
+      <param name="size">The size of the icon to retrieve.</param>
+      <returns>The bytes containing the icon in png format, otherwise <c>null</c> if no icon was available.</returns>
+      <remarks>
+        <para>The base path must be the full path to a folder on the local harddisk. It is recommended to create a subfolder next to the Provider assemblies.</para>
+        <para>The following example demonstrates how a Provider can locate this folder at runtime:
+            </para>
+        <code>
+                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                UriBuilder uri = new UriBuilder(codeBase);
+                string path = Uri.UnescapeDataString(uri.Path);
+                return Path.GetDirectoryName(path);
+            </code>
+        <para>
+            The base folder must contain a subfolder for each supported theme. Alternatively, create a folder with the name "_Default" to use
+            when there is no subfolder matching the name of the theme. Each theme folder must have a subfolder
+            with the name "Icons" to allows an add-in to include other theme related content in the same folder structure as the icons.
+            </para>
+        <para>
+            The Icons folder most contain one file for each icon using the naming format: nnnnn.wwxhh.png, for example ProviderIcon.16x16.png, 
+            where nnnnn matches <paramref name="iconName" />, ww is the width of the icon, and hh is the height. It is recommended to include at least the sizes
+            16x16, 24x24, 32x32, and 48x48. The largest icon that is equal to, or smaller than, the requested size will be returned.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.GetIcon(System.String,System.String,System.String,System.Int32,System.Int32@)">
+      <summary>
+            Loads an icon out of a folder structure based on the selected theme, size, and name.
+            </summary>
+      <param name="basePath">The path to search for icons.</param>
+      <param name="theme">The UI theme.</param>
+      <param name="iconName">The name of the icon.</param>
+      <param name="size">The size of the icon to retrieve.</param>
+      <param name="actualSize">The size of the loaded icon.</param>
+      <returns>
+            The bytes containing the icon in png format, otherwise <c>null</c> if no icon was available.
+            </returns>
+      <remarks>
+        <para>The base path must be the full path to a folder on the local harddisk. It is recommended to create a subfolder next to the Provider assemblies.</para>
+        <para>To locate this folder at runtime, the provider can use for example:
+            <code>
+            string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+            UriBuilder uri = new UriBuilder(codeBase);
+            string path = Uri.UnescapeDataString(uri.Path);
+            return Path.GetDirectoryName(path);
+            </code></para>
+        <para>
+            The base folder must contain a subfolder for each supported theme. Alternatively, create a folder with the name "_Default" to use
+            when there is no subfolder matching the name of the theme. Each theme folder must have a subfolder
+            with the name "Icons" to allows an add-in to include other theme related content in the same folder structure as the icons.
+            </para>
+        <para>
+            The Icons folder most contain one file for each icon using the naming format: nnnnn.wwxhh.png, for example ProviderIcon.16x16.png, 
+            where nnnnn matches <paramref name="iconName" />, ww is the width of the icon, and hh is the height. It is recommended to include at least the sizes
+            16x16, 24x24, 32x32, and 48x48. The largest icon that is equal to, or smaller than, the requested size will be returned.
+              </para>
+        <para>
+            The value assigned to <paramref name="actualSize" /> is based on the filename of the selected file, not the actual content of the stream. The
+            Provider must ensure that the available icons have sizes that match the filename.
+            </para>
+      </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.LogMessage(Tridion.ExternalContentLibrary.V2.LoggingSeverity,System.String)">
+      <summary>
+            Logs a message in the log file of the External Content Library.
+            </summary>
+      <param name="severity">The severity of the message being logged.</param>
+      <param name="message">The message to log.</param>
+      <remarks>The <see cref="P:Tridion.ExternalContentLibrary.V2.IEclUri.MountPointId" /> will automatically be included in the log file to identify the provider logging the message.</remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.IHostServices.GetTransactionPropagationToken">
+      <summary>
+            Gets a token that can be used to join the SDL Tridion transaction (if any).
+            </summary>
+      <returns>A byte array that can be used with <see cref="M:System.Transactions.TransactionInterop.GetTransactionFromTransmitterPropagationToken(System.Byte[])" /> if SDL Tridion is running in a Transaction, otherwise <c>null</c> if SDL Tridion is not running in a transaction.</returns>
+      <remarks>
+        <para>
+            The token can only be retrieved by the thread that called into the Provider from the External Content Library host. If called from a
+            thread that was started in the Provider, <c>null</c> is returned even if <see cref="P:System.Transactions.Transaction.Current" /> has been set in the Provider.
+            </para>
+        <para>
+            Calling <see cref="M:System.Transactions.TransactionInterop.GetTransactionFromTransmitterPropagationToken(System.Byte[])" /> with the specified token will always promote any running transaction in SDL Tridion to a distributed transaction, which can have a negative
+            impact on performance. Therefore, only call this method if it is important to ensure data consistency between SDL Tridion and the external system, typically from the
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryItem.Save(System.Boolean)" /> method if the user can change, for example, both the <see cref="P:Tridion.ExternalContentLibrary.V2.IContentLibraryListItem.Title" />
+            and SDL Tridion metadata on the item.
+            It is not possible to force the SDL Tridion system to start a transaction for the current operation as this could lead to deadlocks.
+            </para>
+      </remarks>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IFieldDefinition">
+      <summary>
+            Defines a field in the user interface generated for the metadata of the external system.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFieldDefinition.XmlElementName">
+      <summary>
+            Gets the local name of the XML element the field displays the value for.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFieldDefinition.Label">
+      <summary>
+            Gets the label that will be displayed in the UI for the field.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFieldDefinition.MinOccurs">
+      <summary>
+            Gets the minimum number of items that must be entered when a user edit the field. If set to 0 the field is optional.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFieldDefinition.MaxOccurs">
+      <summary>
+            Gets the maximum number of items that can be entered when the user edit the fields (see remarks).
+            </summary>
+      <remarks>If <c>1</c> the field is a single value, any other value indicates a list of items. If <c>null</c> there is no limit to the number of items that can be added.</remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IFieldDefinition.CustomUrl">
+      <summary>
+            Gets or sets the custom URL of the field.
+            </summary>
+      <remarks>
+            If a custom URL is defined, the CME hyperlinks the label using this URL as hyperlink.
+            </remarks>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IMultiLineTextFieldDefinition">
+      <summary>
+            Represents a multi-line text field definition.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IMultiLineTextFieldDefinition.Height">
+      <summary>
+            Gets the height (in number of lines) of the text area in the form-based user interface.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IPaginatedFolderContent">
+      <summary>
+            Specifies pagination information for a list result returned by <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.GetFolderContent(Tridion.ExternalContentLibrary.V2.IEclUri,System.Int32,Tridion.ExternalContentLibrary.V2.EclItemTypes)" />
+            or <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryContext.Search(Tridion.ExternalContentLibrary.V2.IEclUri,System.String,System.Int32,System.Int32)" /></summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IPaginatedFolderContent.PageIndex">
+      <summary>
+            Gets the 0 based index of the page being returned.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IPaginatedFolderContent.TotalNumberOfPages">
+      <summary>
+            Gets the total number of pages available, or <c>null</c> if the Provider is not able to determine the number of pages.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IPaginatedFolderContent.IsLastPage">
+      <summary>
+            Gets a value indicating whether this is the last page in the result set.
+            </summary>
+      <remarks>
+            The provider must set this to true for the last page, even if <see cref="P:Tridion.ExternalContentLibrary.V2.IPaginatedFolderContent.TotalNumberOfPages" /> contains a value that can be used to determine
+            if this is the last page.
+            </remarks>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.ISchemaDefinition">
+      <summary>
+            Defines the user interface for the external meta data XML.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ISchemaDefinition.NamespaceUrl">
+      <summary>
+            Gets the namespace URL of the XML elements.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ISchemaDefinition.RootElementName">
+      <summary>
+            Gets the name of the XML root element.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ISchemaDefinition.Fields">
+      <summary>
+            Gets the fields defining the XML.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.IThumbnailOverlay">
+      <summary>
+            Defines an image overlay on a thumbnail created with
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" />
+            or <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailImage(System.Int32,System.Int32,System.IO.Stream,System.Int32,System.Int32,System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.IThumbnailOverlay})" />.
+            </summary>
+      <remarks>
+            A Provider can use <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailOverlay(System.Int32,System.Int32,System.IO.Stream)" /> or
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IHostServices.CreateThumbnailOverlay(System.Int32,System.Int32,System.Int32,System.Int32,System.IO.Stream)" />
+            to create an instance of <see cref="T:Tridion.ExternalContentLibrary.V2.IThumbnailOverlay" />. Alternatively, a Provider can use a custom implementation.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IThumbnailOverlay.X">
+      <summary>
+            Gets the position, in pixels, of the left side of the overlay from the left side of the thumbnail image.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IThumbnailOverlay.Y">
+      <summary>
+            Gets the position, in pixels, of the top of the overlay from the top of the thumbnail image.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IThumbnailOverlay.Width">
+      <summary>
+            Gets the width to use to render the overlay in pixels, otherwise <c>null</c> if the width of the provided image should be used.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IThumbnailOverlay.Height">
+      <summary>
+            Gets the height to use to render the overlay in pixels, otherwise <c>null</c> if the height of the provided image should be used.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.IThumbnailOverlay.ImageStream">
+      <summary>
+            Gets the stream the image can be read from.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.ITridionGroup">
+      <summary>
+            Represents a Tridion User Group the <see cref="P:Tridion.ExternalContentLibrary.V2.IEclSession.TridionUser" /> is a member of.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITridionGroup.Id">
+      <summary>
+            Gets the TCM URI of the User Group.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITridionGroup.Title">
+      <summary>
+            Gets the title of the User Group.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITridionGroup.ScopedPublicationUris">
+      <summary>
+            Gets the TCM URIs of the Tridion Publications in scope for this User Group membership. An empty list suggests that membership has not been scoped and therefore applies to all Publications.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.ITridionUser">
+      <summary>
+            Represents a Tridion User.
+            </summary>
+      <see cref="P:Tridion.ExternalContentLibrary.V2.IEclSession.TridionUser" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITridionUser.Id">
+      <summary>
+            Gets the TCM URI of the Tridion User.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITridionUser.UserName">
+      <summary>
+            Gets the unique username of the Tridion User.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITridionUser.FullName">
+      <summary>
+            Gets the full name of the Tridion User.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITridionUser.GroupMemberships">
+      <summary>
+            Gets a list of Tridion <see cref="T:Tridion.ExternalContentLibrary.V2.ITridionGroup">User Groups</see> the Tridion User is a member of.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITridionUser.IsAdministrator">
+      <summary>
+            Gets a value indicating whether this Tridion User is an SDL Tridion administrator.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITridionUser.IsTrustedReadOnlyMode">
+      <summary>
+            Gets a value indicating whether the SDL Tridion Session for the user is running in Trusted Read Only Mode (see remarks).
+            </summary>
+      <remarks>
+            The Trusted Read Only Mode is set when SDL Tridion renders templates for use in publishing or preview. A provider can grant
+            read access to items the user would normally not have access to in order to allow a user to publish any page the user has
+            access to even if the user does not have access to each individual item on the page.
+            </remarks>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.ITridionUser.IsInGroup(System.String,System.String)">
+      <summary>
+            Gets a value indicating whether this Tridion User is in the specified Tridion User Group in the specified context Publication.
+            </summary>
+      <param name="groupUri">The TCM URI of a Tridion User Group.</param>
+      <param name="publicationUri">The TCM URI of a Tridion Publication.</param>
+      <returns>
+        <c>true</c> if the user is scoped as a member of the Group in the specified Publication, otherwise <c>false</c>.
+            </returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.ITridionUser.GetSamlToken(System.String)">
+      <summary>
+            Gets a SAML2 token issued by the Tridion STS for the User.
+            </summary>
+      <param name="appliesTo">Identifies the system the token should be issued for (configured in %Tridion%\Config\TridionSTS.xml).</param>
+      <returns>A string with the XML representation of the encrypted token.</returns>
+    </member>
+    <member name="M:Tridion.ExternalContentLibrary.V2.ITridionUser.GetSamlToken(System.String,System.Byte[]@,System.DateTime@,System.DateTime@,System.String@,System.String@)">
+      <summary>
+            Gets a SAML2 token issued by the Tridion STS for the Tridion User.
+            </summary>
+      <param name="appliesTo">Identifies the system the token should be issued for (configured in %Tridion%\Config\TridionSTS.xml).</param>
+      <param name="proofTokenBytes">The bytes of the binary proof token.</param>
+      <param name="validFrom">Specifies the time this token is valid from.</param>
+      <param name="validTo">Specifies the time this token is valid to.</param>
+      <param name="internalTokenReferenceAssertionId">The assertion id string of the internal <see cref="T:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause" />.</param>
+      <param name="externalTokenReferenceAssertionId">The assertion id string of the external <see cref="T:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause" />.</param>
+      <returns>A string with the XML representation of the encrypted token.</returns>
+      <example>
+        <para>The following example shows how to create a <see cref="T:System.IdentityModel.Tokens.GenericXmlSecurityToken" /> that can, for example, be used with a WCF client:</para>
+        <code>
+            SecurityToken GetToken(ITridionUser user)
+            {
+                byte[] proofTokenBytes;
+                DateTime validFrom;
+                DateTime validTo;
+                string internalTokenReferenceAssertionId;
+                string externalTokenReferenceAssertionId;
+                string tokenString = user.GetSamlToken(
+                    "external-system-uri",
+                    out proofTokenBytes,
+                    out validFrom, 
+                    out validTo
+                    out internalTokenReferenceAssertionId,
+                    out externalTokenReferenceAssertionId);
+            
+                BinarySecretSecurityToken proofToken = new BinarySecretSecurityToken(proofTokenBytes);
+                SamlAssertionKeyIdentifierClause internalClause = new SamlAssertionKeyIdentifierClause(internalTokenReferenceAssertionId);
+                SamlAssertionKeyIdentifierClause externalClause = new SamlAssertionKeyIdentifierClause(externalTokenReferenceAssertionId);
+                XmlDocument tokenDocument = new XmlDocument();
+                tokenDocument.LoadXml(tokenString);
+                return new GenericXmlSecurityToken(tokenDocument.DocumentElement, proofToken, validFrom, validTo, internalClause, externalClause,
+                                                   new ReadOnlyCollection&lt;IAuthorizationPolicy&gt;(new List&lt;IAuthorizationPolicy&gt;());
+            }</code>
+      </example>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.LoggingSeverity">
+      <summary>
+            Specifies the severity of the message logged.
+            </summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.LoggingSeverity.Debug">
+      <summary>
+            Messages to log whilst debugging problems.
+            </summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.LoggingSeverity.Info">
+      <summary>
+            Messages containing general information, not identifying a problem.
+            </summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.LoggingSeverity.Warning">
+      <summary>
+            Messages with warnings that may identify a problem.
+            </summary>
+    </member>
+    <member name="F:Tridion.ExternalContentLibrary.V2.LoggingSeverity.Error">
+      <summary>
+            Messages with errors that identify a problem.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.ITemplateAttribute">
+      <summary>
+            Represents an attribute passed from the templating code to the Provider.
+            </summary>
+      <remarks>
+            The External Content Library only facilitates passing the attributes to the
+            Provider when calling <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetTemplateFragment(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" />,
+            <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetDirectLinkToPublished(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" />, and <see cref="M:Tridion.ExternalContentLibrary.V2.IContentLibraryMultimediaItem.GetContent(System.Collections.Generic.IList{Tridion.ExternalContentLibrary.V2.ITemplateAttribute})" />.
+            Each Provider determines the exact attributes (if any) that are supported and the impact they have on the returned values.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITemplateAttribute.Name">
+      <summary>
+            Gets the name of the attribute.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITemplateAttribute.NamespaceUri">
+      <summary>
+            Gets the namespace URI, if available.
+            </summary>
+      <remarks>
+            Ideally, a Provider should not rely on this value being specified as it cannot always be determined by the templating code
+            when the output of the template is not XML, for example when a template renders HTML rather than XHTML.
+            </remarks>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ITemplateAttribute.Value">
+      <summary>
+            Gets the value of the attribute.
+            </summary>
+    </member>
+    <member name="T:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition">
+      <summary>
+            Defines a single line text field in the user interface generated for the metadata of the external system.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.AllowedValues">
+      <summary>
+            Gets a list of the dates the user is able to select from. And empty list if the user is allowed to enter any text.
+            </summary>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.ListHeight" />
+            /// <seealso cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.ListType" /></member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.ListHeight">
+      <summary>
+            Gets the height of the rendered list if the <see cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.AllowedValues" /> is not empty. Use <see cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.ListType" /> to specify how the list should be rendered.
+            </summary>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.AllowedValues" />
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.ListType" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.ListType">
+      <summary>
+            Determines how the user interface should render multiple choices specified in <seealso cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.AllowedValues" />.
+            </summary>
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.AllowedValues" />
+      <seealso cref="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.ListHeight" />
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.MinLength">
+      <summary>
+            Gets the minimum length of the string the user can enter.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.MaxLength">
+      <summary>
+            Gets the maximum length of the string the user can enter.
+            </summary>
+    </member>
+    <member name="P:Tridion.ExternalContentLibrary.V2.ISingleLineTextFieldDefinition.Pattern">
+      <summary>
+            Gets a regular expression pattern to constrain the value.
+            </summary>
+    </member>
+  </members>
+</doc>	

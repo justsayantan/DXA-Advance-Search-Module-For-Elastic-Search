@@ -1,0 +1,74 @@
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csproj.CoreCompileInputs.cache
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\SI4T.Templating.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\SI4T.Templating.pdb
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.Common.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Common.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Publishing.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Templating.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.Common.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Common.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Publishing.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Templating.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csprojAssemblyReference.cache
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csproj.CopyComplete
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\Search Integration\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.pdb
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\SI4T.Templating.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\SI4T.Templating.pdb
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.Common.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Common.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Publishing.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Templating.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.Common.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Common.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Publishing.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Templating.xml
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csprojAssemblyReference.cache
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csproj.CoreCompileInputs.cache
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csproj.CopyComplete
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.dll
+C:\Office\D\Projects\Tridion-Project\WFH\Source_Code\WebSite\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.pdb
+D:\SI4T-develop\tbbs\bin\Debug\SI4T.Templating.dll
+D:\SI4T-develop\tbbs\bin\Debug\SI4T.Templating.pdb
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.Common.dll
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Common.dll
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.dll
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Publishing.dll
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Templating.dll
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.Common.xml
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.xml
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Common.xml
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Publishing.xml
+D:\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Templating.xml
+D:\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csprojResolveAssemblyReference.cache
+D:\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.dll
+D:\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.pdb
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\SI4T.Templating.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\SI4T.Templating.pdb
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.Common.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Common.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Publishing.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Templating.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.TemplateTypes.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Queuing.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.TypeRegistration.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.Logging.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.Common.xml
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.xml
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Common.xml
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Publishing.xml
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Templating.xml
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.TemplateTypes.xml
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.Queuing.xml
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.ContentManager.TypeRegistration.xml
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\bin\Debug\Tridion.Logging.xml
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csprojAssemblyReference.cache
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csproj.CoreCompileInputs.cache
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.csproj.CopyComplete
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.dll
+C:\Office\Personal-Drive\SDL\SDL-Projects\WFH\Content Manager\SI4T Custom TBB\SI4T-develop\tbbs\obj\Debug\SI4T.Templating.pdb

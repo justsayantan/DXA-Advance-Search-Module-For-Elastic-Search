@@ -1,0 +1,891 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tridion.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:Tridion.Logging.BaseTracer">
+            <summary>
+            Base class for Tracer and ExtensionTracer.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.BaseTracer.Depth">
+            <summary>
+            Operation depth in Tracer stack trace.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.BaseTracer.ActivityId">
+            <summary>
+            Current activity identifier.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.BaseTracer.OperationId">
+            <summary>
+            Current operation identifier.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.BaseTracer.RelatedActivityId">
+            <summary>
+            Current related activity identifier.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.ExtensionTracer">
+            <summary>
+            Tracer for tracing extension method invocation.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.ExtensionTracer.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.Logger">
+            <summary>
+            Simple logging facade used to write (localizable) messages and (localizable) exception to the configured logging destinations.
+            </summary>
+            <remarks>
+            The facade is a static class which requires a "component" to be specified on each method call.
+            Typically, this Logger class is not used directly but rather wrapped in a more specific logging class which provides the component value.  
+            </remarks>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Write(Tridion.TridionException,System.String)">
+            <summary>
+            Writes the specified <see cref="T:Tridion.TridionException"/> to a log.
+            </summary>
+            <param name="exception">The <see cref="T:Tridion.TridionException"/> that will be logged.</param>
+            <param name="component">The component that logs this exception.</param>
+            <remarks>The log entry will have the following extended properties: category, username, stacktrace and errorcode</remarks>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Write(System.String,System.String,System.Enum)">
+            <summary>
+            Writes a message to the log.
+            </summary>
+            <param name="message">The message to write to the log.</param>
+            <param name="component">The component that logs this exception.</param>
+            <param name="category">Route the message to this category.</param>
+            <remarks>The severity of the message is <seealso cref="F:System.Diagnostics.TraceEventType.Information"/>.</remarks>
+            <seealso cref="M:Tridion.Logging.Logger.Write(Tridion.Localization.LocalizableMessage,System.String,System.Enum)"/>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Write(System.String,System.String,System.Enum,System.Diagnostics.TraceEventType)">
+            <summary>
+            Writes a message to the log with specified severity.
+            </summary>
+            <param name="message">The message to write to the log.</param>
+            <param name="component">The component that logs this exception.</param>
+            <param name="category">Route the message to this category.</param>
+            <param name="severity">The severity of the message.</param>
+            <seealso cref="M:Tridion.Logging.Logger.Write(Tridion.Localization.LocalizableMessage,System.String,System.Enum,System.Diagnostics.TraceEventType)"/>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Write(Tridion.Localization.LocalizableMessage,System.String,System.Enum)">
+            <summary>
+            Writes a localizable message to the log. The message is localized in the configured logging culture.
+            </summary>
+            <param name="message">The localizable message to write to the log.</param>
+            <param name="component">The component that logs this exception.</param>
+            <param name="category">Route the message to this category.</param>
+            <remarks>The severity of the message is <seealso cref="F:System.Diagnostics.TraceEventType.Information"/>.</remarks>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Write(Tridion.Localization.LocalizableMessage,System.String,System.Enum,System.Diagnostics.TraceEventType)">
+            <summary>
+            Writes a localizable message to the log with specified severity. The message is localized in the configured logging culture.
+            </summary>
+            <param name="message">The localizable message to write to the log.</param>
+            <param name="component">The component that logs this exception.</param>
+            <param name="category">Route the message to this category.</param>
+            <param name="severity">The severity of the message.</param>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Write(System.Exception,System.String,System.Enum)">
+            <summary>
+            Writes the specified exception to the log.
+            </summary>
+            <param name="exception">The <see cref="T:System.Exception"/> that will be logged.</param>
+            <param name="component">The component that logs this exception.</param>
+            <param name="category">The category to which this exception is routed.</param>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Write(System.Exception,System.String,System.Enum,System.Diagnostics.TraceEventType)">
+            <summary>
+            Writes the specified exception to the log with specified severity.
+            </summary>
+            <param name="exception">The <see cref="T:System.Exception"/> that will be logged.</param>
+            <param name="component">The component that logs this exception.</param>
+            <param name="category">The category to which this exception is routed.</param>
+            <param name="severity">The severity.</param>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Initialize">
+            <summary>
+            Creates a new <see cref="T:Microsoft.Practices.EnterpriseLibrary.Logging.LogWriter"/> based on the configuration
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Write(System.String,System.String,System.String,System.Enum,System.Enum,System.Diagnostics.TraceEventType)">
+            <summary>
+            Writes a message to the log.
+            </summary>
+            <param name="message">The message to write to the log.</param>
+            <param name="component">The component that logs this exception.</param>
+            <param name="stackTrace">The stack trace of an exception.</param>
+            <param name="errorCode">The error code of a <see cref="T:Tridion.TridionException"/>.</param>
+            <param name="severity">The severity of the message.</param>
+            <param name="category">Route the message to this category.</param>
+        </member>
+        <member name="M:Tridion.Logging.Logger.Write(System.Exception,System.String,System.Enum,System.Enum,System.Diagnostics.TraceEventType)">
+            <summary>
+            Writes the specified exception to the log with specified severity and error code.
+            </summary>
+            <param name="exception">The <see cref="T:System.Exception"/> that will be logged.</param>
+            <param name="component">The component that logs this exception.</param>
+            <param name="errorCode">The error code of this exception.</param>
+            <param name="category">The category to which this exception is routed.</param>
+            <param name="severity">The severity.</param>
+        </member>
+        <member name="M:Tridion.Logging.Logger.ReportLoggingError(System.Exception)">
+            <summary>
+            Report an exception that occurred in the Logger itself.
+            </summary>
+            <param name="e">The exception to report.</param>
+            <remarks>
+            Since logging is typically done as part of error handling, we don't want the Logger itself to throw Exceptions.
+            Therefore, any Exception is catch and "swallowed". We do write the exception to the System.Diagnostics.Trace, though.
+            </remarks>
+        </member>
+        <member name="M:Tridion.Logging.SdlWebTridionEventSource.Write(Tridion.Logging.TridionLogEntry,System.Nullable{System.Int64},Tridion.Logging.TraceKeywords,System.Diagnostics.Tracing.EventOpcode)">
+            <summary>
+            Writes an event to the ETW stream.
+            </summary>
+            <param name="tridionLogEntry">Event description to be written to the ETW stream.</param>
+            <param name="elapsedMs">Duration of the operation.</param>
+            <param name="keyword"> The custom group which an event belongs to (i.e. Database, Internal, Public, External: <see cref="T:Tridion.Logging.TraceKeywords"/>).</param>
+            <param name="opCode"> The operation code of the event. Only Start and Stop operation codes can be used. </param>
+        </member>
+        <member name="P:Tridion.Logging.SdlWebTridionEventSource.IsTracingEnabled">
+            <summary>
+            Check that there are listeners attached to the current event source.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.Tracer">
+            <summary>
+            Used for tracing method entry/exit calls.
+            </summary>
+            <remarks>
+            <para>
+            Method entry trace is output when a <c>Tracer</c> instance is created.
+            Method exit trace (including method duration) is output when the instance is disposed.
+            In this manner, method entry/exit tracing can easily be achieved in code by wrapping 
+            the method's entire implementation in a <c>using(Tracer.GetTracer().StartTrace())</c> statement.
+            </para>
+            <example><code>
+            void TracerTest()
+            {
+              using(Tracer.GetTracer().StartTrace())
+              {
+                // Entire method implementation goes here.
+              }
+            }
+            </code></example>
+            <para>
+            Firing ETW events is enabled/disabled according to whether there are any ETW-listeners for the specified provider id registered in the system.
+            Custom event channel can be set in tridion.common configuration section by setting channelName property of <see cref="T:Tridion.Configuration.TracingSettings"/> element.
+            Known channelName list:
+            <list type="bullet">
+            <item>
+            DefaultEventChannel (the default channel for tracing events in case if channel was not specified in configuration file).
+            </item>
+            <item>
+            TcmEventChannel (the channel for tracing events, which are fired by SDL Tridion Sites)
+            </item>
+            TtmEventChannel (the channel for tracing events, which are fired by Topology Manager)
+            </list>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Tridion.Logging.Tracer.#ctor(Tridion.Logging.Tracer.MethodInfo)">
+            <summary>
+            Private .ctor to create instance of <see cref="T:Tridion.Logging.Tracer"/> class and context.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.Tracer.#ctor(System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tridion.Logging.Tracer"/> class. 
+            Results in a method entry trace being output.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.Tracer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tridion.Logging.Tracer"/> class. 
+            Results in a method entry trace being output.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.Tracer.GetTracer(System.String,System.String,System.Int32,System.String,System.Nullable{System.Int32},System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{System.Guid})">
+            <summary>
+            Creates new tracer and injects context.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.Tracer.Dispose">
+            <summary>
+            Disposes the instance. Results in a method exit trace being output.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.Tracer.StartTrace(System.Object[])">
+            <summary>
+            Writes an event to ETW-stream
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.Tracer.ConvertParameterToString(System.Object)">
+            <summary>
+            Converts the parameter supplied to the Tracer to a string and limit the value to the 100 of characters.
+            </summary>
+            <param name="param">The parameter to convert.</param>
+            <returns>A string that contains the value of the supplied parameter.</returns>
+        </member>
+        <member name="M:Tridion.Logging.Tracer.TraceMethodEntry(System.Object[])">
+            <summary>
+            Outputs a method entry trace.
+            </summary>
+            <param name="parameters">The parameter values to include in the trace.</param>
+        </member>
+        <member name="M:Tridion.Logging.Tracer.TraceMethodExit">
+            <summary>
+            Outputs a method exit trace.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TracerAttribute.OnEntry(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+            Method executed <b>before</b> the body of methods to which this aspect is applied.
+            </summary>
+            <param name="args">Event arguments specifying which method
+            is being executed, which are its arguments, and how should the execution continue
+            after the execution of <see cref="M:PostSharp.Aspects.IOnMethodBoundaryAspect.OnEntry(PostSharp.Aspects.MethodExecutionArgs)" />.</param>
+        </member>
+        <member name="M:Tridion.Logging.TracerAttribute.OnExit(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+            Method executed <b>after</b> the body of methods to which this aspect is applied,
+            even when the method exists with an exception (this method is invoked from
+            the <c>finally</c> block).
+            </summary>
+            <param name="args">Event arguments specifying which method
+            is being executed and which are its arguments.</param>
+        </member>
+        <member name="M:Tridion.Logging.TracerAttribute.OnException(PostSharp.Aspects.MethodExecutionArgs)">
+            <summary>
+            Method executed <b>after</b> the body of methods to which this aspect is applied,
+            in case that the method resulted with an exception.
+            </summary>
+            <param name="args">Event arguments specifying which method
+            is being executed and which are its arguments.</param>
+        </member>
+        <member name="T:Tridion.Logging.EntryBase">
+            <summary>
+            Logging entry with basic information.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.OperationId">
+            <summary>
+            The unique Guid of this operation which can be used to match the pair of start and stop event.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.Depth">
+            <summary>
+            The position of the called operation in stack trace.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.ProcessName">
+            <summary>
+            The name of the running process.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.SubjectInfo">
+            <summary>
+            Further information about the subject of the method.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.UserId">
+            <summary>
+            The Id of the User on whose behalf the method was called.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.UtcTimeStamp">
+            <summary>
+            Utc timestamp.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.ThreadId">
+            <summary>
+            Thread identificator.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.Keywords">
+            <summary>
+            Tracing keywords (event groups).
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.Channel">
+            <summary>
+            Tracing channel (TcmChannel, TtmChannel and DefaultChannel).
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.Level">
+            <summary>
+            Severity level.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.OpCode">
+            <summary>
+            Operation code (Start, Stop or Info).
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.TaskName">
+            <summary>
+            Name of the task.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.ProcessId">
+            <summary>
+            Process identificator.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.ProcessorNumber">
+            <summary>
+            Number of processors.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.ActivityId">
+            <summary>
+            Activity identificator.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.RelatedActivityId">
+            <summary>
+            Identificator of a group of activities.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.EntryBase.FormattedMessage">
+            <summary>
+            Formatted message.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.EtwLoggingEntryListener">
+            <summary>
+            Subscribes to etw events and transmits them to registered observables.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.EtwLoggingEntryListener.Subscribe(System.IObserver{Tridion.Logging.EntryBase})">
+            <summary>
+            Notifies the provider that an observer is to receive notifications.
+            </summary>
+            <returns>
+            A reference to an interface that allows observers to stop receiving notifications before the provider has finished sending them.
+            </returns>
+            <param name="observer">The object that is to receive notifications.</param>
+        </member>
+        <member name="M:Tridion.Logging.EtwLoggingEntryListener.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.EventListenerManager">
+            <summary>
+            Creates and manages <see cref="T:Tridion.Logging.EtwLoggingEntryListener"/> and <see cref="T:Tridion.Logging.FilterEventSource"/> instances.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.EventListenerManager.Instance">
+            <summary>
+            Singleton instance of <see cref="T:Tridion.Logging.EventListenerManager"/> class.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.EventListenerManager.RegisterObservableEventSource(System.Collections.Generic.List{Tridion.Logging.TraceChannels},System.Nullable{System.Int32},Tridion.Logging.TraceKeywords,Tridion.Logging.TraceLevels,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Registers observable for specific events and gets events from etw-session.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.EventListenerManager.RegisterObservableEventSource(System.String,System.Collections.Generic.List{Tridion.Logging.TraceChannels},Tridion.Logging.TraceKeywords,Tridion.Logging.TraceLevels)">
+            <summary>
+            Registers observable for specific events and gets events from *.etl files.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.EventListenerManager.StartTraceCapturing(System.String,System.Nullable{System.Int32},Tridion.Logging.TraceKeywords,Tridion.Logging.TraceLevels,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Starts trace event listening session, which creates *.etl file and collects captured events into it.
+            </summary>
+            <param name="etlFilePath">Path to *.etl file. If <see cref="!:multiFileSizeMb"/> is specified and you make your file name *.user.etl then the output will be *.user1.etl, *.user2.etl, etc</param>
+            <param name="listenerProcessId">If not specified, will be generated. Is used to create a name for etw listening session.</param>
+            <param name="keyword">Event keywords to listen to.</param>
+            <param name="eventLevel">Event level to listen to.</param>
+            <param name="circularSizeMb">If specified cause the log to be a circular buffer. 
+            The buffer size (in MegaBytes) is the value of this property.
+            If parameter is set to 0 or not specified it will cause it to revert to non-circular mode.</param>
+            <param name="multiFileSizeMb">Cause the as a set of files with a given maximum size. The file name must end in .ETL and the
+            output is then a series of files of the form *NNN.ETL (That is it adds a number just before the
+            .etl suffix). If you make your file name *.user.etl then the output will be *.user1.etl, *.user2.etl
+            And the MergeInPlace command below will merge them all nicely.</param>
+            <param name="bufferSizeMb">The size of the buffers (in MB) the OS should use to store events waiting to be written to disk.</param>
+            <param name="bufferQuantumKb">This is the unit in which data is flushed in Kilobytes. By default it is 64 (KB).</param>
+        </member>
+        <member name="M:Tridion.Logging.EventListenerManager.StopTraceCapturing">
+            <summary>
+            Stops etw file listener session.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.EventListenerManager.UnregisterObservableEventSource(System.IObservable{Tridion.Logging.EntryBase})">
+            <summary>
+            Unregisters observable source with specific events.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.EventListenerManager.StopListening">
+            <summary>
+            Stops all observables and listener sessions.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.ExtensionTraceEntry.ExtensionPoint">
+            <summary>
+            Extension phase.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.ExtensionTraceEntry.ExtensionName">
+            <summary>
+            <c>True</c>: it is the asynchronous event execution.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.FilterEventSource">
+            <summary>
+            Observable for users which want to receive <see cref="T:Tridion.Logging.TraceEntry"/>s.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.LogEntry">
+            <summary>
+            Error information provided to the ETW-stream.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.LogEntry.Category">
+            <summary>
+            Error category.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.LogEntry.Message">
+            <summary>
+            Localized error message.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.LogEntry.StackTrace">
+            <summary>
+            Error stack trace information.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.LogEntry.Component">
+            <summary>
+            The component in which error occured.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.LogEntry.ErrorCode">
+            <summary>
+             The error code.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.TraceEntry">
+            <summary>
+            An instance of this class contains etw logging event information.
+            Contains custom fields and original TraceEvent for future use.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntry.SourceFile">
+            <summary>
+            The parameter marked with CallerFilePath attribute.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntry.LineNumber">
+            <summary>
+            The parameter marked with CallerLineNumber attibute.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntry.Category">
+            <summary>
+            The category of the event.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntryBase.TimeInterval">
+            <summary>
+            Duration of the operation.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntryBase.DeclaringType">
+            <summary>
+            A type - a container of the operation to be traced.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntryBase.MethodName">
+            <summary>
+            The name of the method.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntryBase.AssemblyName">
+            <summary>
+            The name of the assembly which contains called method.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntryBase.MethodParamsCount">
+            <summary>
+            The number of method parameters.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntryBase.MethodSignature">
+            <summary>
+            Signature of the method.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntryBase.MethodParameters">
+            <summary>
+            A list of the method parameters.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntryBase.ProductVersionInfo">
+            <summary>
+            Information about product version.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TraceEntryBase.ReturnValue">
+            <summary>
+            The execution value of the method.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TraceSaveToFileRunner.#ctor(System.String,System.Int32,Tridion.Logging.TraceKeywords,Tridion.Logging.TraceLevels,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary> .ctor </summary>
+            <param name="etlFilePath">Path to etl file, which will be created and filled with event traces.</param>
+            <param name="listenerProcessId">Process id to create a session. </param>
+            <param name="keyword">Keyword.</param>
+            <param name="eventLevel">Event level.</param>
+            <param name="circularSizeMb">If specified cause the log to be a circular buffer. 
+            The buffer size (in MegaBytes) is the value of this property.
+            If parameter is set to 0 or not specified it will cause it to revert to non-circular mode.</param>
+            <param name="multiFileSizeMb">Cause the log as a set of files with a given maximum size. The file name must end in .ETL and the
+            output is then a series of files of the form *NNN.ETL (That is it adds a number just before the
+            .etl suffix). If you make your file name *.user.etl then the output will be *.user1.etl, *.user2.etl
+            And the MergeInPlace command below will merge them all nicely.</param>
+            <param name="bufferSizeMb">The size of the buffers (in MB) the OS should use to store events waiting to be written to disk.</param>
+            <param name="bufferQuantumKb">This is the unit in which data is flushed in Kilobytes. By default it is 64 (KB).</param>
+        </member>
+        <member name="T:Tridion.Logging.TraceChannels">
+            <summary>
+            The custom channel which an event comes from.
+            Custom channels can be defined in the range between 16 and 255.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceChannels.DefaultChannel">
+            <summary>
+            Default channel.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceChannels.TtmChannel">
+            <summary>
+            Channel for getting events from Topology Manager.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceChannels.TcmChannel">
+            <summary>
+            Channel for getting events from Content Manager.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceChannels.AmChannel">
+            <summary>
+            Channel for getting events from Audience Manager.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceChannels.XoChannel">
+            <summary>
+            Channel for getting events from Experience Optimization.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceChannels.CmeChannel">
+            <summary>
+            Channel for getting events for Content Manager Explorer.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceChannels.XpmChannel">
+            <summary>
+            Channel for getting events for Experience Manager.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceChannels.UgcChannel">
+            <summary>
+            Channel for getting events for User Generated Content.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.TraceKeywords">
+            <summary>
+            The custom group which an event belongs to.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceKeywords.Public">
+            <summary>
+            Identifies events which are raised by public methods to distinguish customer method calls.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceKeywords.Internal">
+            <summary>
+            Identifies events which are raised by SDL Tridion Sites internal methods.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceKeywords.External">
+            <summary>
+            Identifies events which are raised by external customer's code (is used by default).
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceKeywords.Database">
+            <summary>
+            Identifies events which are raised in order to perform database operations (i.e. in ORM assemblies).
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceKeywords.PublicIndirect">
+            <summary>
+            Identifies events which are raised by public methods deeper in stacktrace than customer method calls.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceKeywords.Extension">
+            <summary>
+            Identifies events which are raised by calling any SDL Tridion Sites extensions.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceKeywords.All">
+            <summary>
+            Event with any channel.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.TraceLevels">
+            <summary>
+            Indicates to a provider whether verbose events should be logged.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceLevels.Critical">
+            <summary>
+            This level corresponds to a critical error, which is a serious error that has caused a major failure
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceLevels.Error">
+            <summary>
+            This level adds standard errors that signify a problem.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceLevels.Warning">
+            <summary>
+            This level adds warning events.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceLevels.Informational">
+            <summary>
+            This level adds informational events or messages that are not errors. These events can help trace
+            the progress or state of an application.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceLevels.Verbose">
+            <summary>
+            This level adds lengthy events or messages. It causes all events to be logged (debugging trace).
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.TraceOpCodes">
+            <summary>
+            Operation codes.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceOpCodes.Info">
+            <summary>
+            Informational event.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceOpCodes.Start">
+            <summary>
+            Start event
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceOpCodes.Stop">
+            <summary>
+            Stop event.
+            </summary>
+        </member>
+        <member name="F:Tridion.Logging.TraceOpCodes.Extension">
+            <summary>
+            Extension event.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.TracingChannelAttribute">
+            <summary>
+            Attribute marks assembly to define the tracing channel name.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TracingChannelAttribute.Channel">
+            <summary>
+            Channel name for tracing.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TracingChannelAttribute.#ctor(Tridion.Logging.TraceChannels)">
+            <summary>
+            Creates an instance of the <see cref="T:Tridion.Logging.TracingChannelAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.TracingKeywordAttribute">
+            <summary>
+            Attribute marks assembly to define the default tracing group.
+            </summary>
+        </member>
+        <member name="P:Tridion.Logging.TracingKeywordAttribute.Keywords">
+            <summary>
+            Event group for tracing.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TracingKeywordAttribute.#ctor(Tridion.Logging.TraceKeywords)">
+            <summary>
+            Creates an instance of the <see cref="T:Tridion.Logging.TracingKeywordAttribute"/> class.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.TridionConfigurationSource">
+            <summary>
+             Provides access to <see cref="T:System.Configuration.ConfigurationSection"/> using the <see cref="T:Tridion.Configuration.ConfigurationManager"/>.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TridionConfigurationSource.GetSection(System.String)">
+            <summary>
+            Use the <see cref="T:Tridion.Configuration.ConfigurationManager"/> from Tridion.Common to get the Section.
+            </summary>
+            <param name="sectionName">The section to get.</param>
+            <returns>The specified <see cref="T:System.Configuration.ConfigurationSection"/> if exists, otherwise <see langword="null"/>.</returns>
+        </member>
+        <member name="T:Tridion.Logging.TridionConsoleTraceListener">
+            <summary>
+            Custom trace listener for logging events using the standard <see cref="T:System.Console"/>. 
+            </summary>
+            <remarks>Don't use this class, it should only by used by the Enterprise Logging Application block.</remarks>
+        </member>
+        <member name="M:Tridion.Logging.TridionConsoleTraceListener.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TridionConsoleTraceListener.Write(System.String)">
+            <summary>
+            Writes the specified message to this listener.
+            </summary>
+            <param name="message">A message to write.</param>
+        </member>
+        <member name="M:Tridion.Logging.TridionConsoleTraceListener.WriteLine(System.String)">
+            <summary>
+            Writes a message to this listner, followed by a line terminator. 
+            </summary>
+            <param name="message">A message to write.</param>
+        </member>
+        <member name="M:Tridion.Logging.TridionConsoleTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)">
+            <summary>
+            Writes trace information, a data object and event information to the listener specific output.
+            </summary>
+            <param name="eventCache">A TraceEventCache object that contains the current process ID, thread ID, and stack trace information.</param>
+            <param name="source">A name used to identify the output, typically the name of the application that generated the trace event.</param>
+            <param name="eventType">One of the TraceEventType values specifying the type of event that has caused the trace.</param>
+            <param name="id">A numeric identifier for the event.</param>
+            <param name="data">The trace data to emit.</param>
+        </member>
+        <member name="T:Tridion.Logging.TridionDebugTraceListener">
+            <summary>
+            Custom trace listener for logging events using the standard <see cref="T:System.Diagnostics.DefaultTraceListener"/>. 
+            </summary>
+            <remarks>Don't use this class, it should only by used by the Enterprise Logging Application block.</remarks>
+        </member>
+        <member name="M:Tridion.Logging.TridionDebugTraceListener.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TridionDebugTraceListener.Write(System.String)">
+            <summary>
+            Writes the specified message to this listener.
+            </summary>
+            <param name="message">A message to write.</param>
+        </member>
+        <member name="M:Tridion.Logging.TridionDebugTraceListener.WriteLine(System.String)">
+            <summary>
+            Writes a message to this listner, followed by a line terminator. 
+            </summary>
+            <param name="message">A message to write.</param>
+        </member>
+        <member name="M:Tridion.Logging.TridionDebugTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)">
+            <summary>
+            Writes trace information, a data object and event information to the listener specific output.
+            </summary>
+            <param name="eventCache">A TraceEventCache object that contains the current process ID, thread ID, and stack trace information.</param>
+            <param name="source">A name used to identify the output, typically the name of the application that generated the trace event.</param>
+            <param name="eventType">One of the TraceEventType values specifying the type of event that has caused the trace.</param>
+            <param name="id">A numeric identifier for the event.</param>
+            <param name="data">The trace data to emit.</param>
+        </member>
+        <member name="T:Tridion.Logging.TridionEventLogTraceListener">
+            <summary>
+            Custom trace listeners for logging events tot the system event log. 
+            </summary>
+            <remarks>Don't use this class, it should only by used by the Enterprise Logging Application block.</remarks>
+        </member>
+        <member name="M:Tridion.Logging.TridionEventLogTraceListener.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TridionEventLogTraceListener.Write(System.String)">
+            <summary>
+            Writes the specified message to this listener.
+            </summary>
+            <param name="message">A message to write.</param>
+        </member>
+        <member name="M:Tridion.Logging.TridionEventLogTraceListener.WriteLine(System.String)">
+            <summary>
+            Writes a message to this listener, followed by a line terminator. 
+            </summary>
+            <param name="message">A message to write.</param>
+        </member>
+        <member name="M:Tridion.Logging.TridionEventLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)">
+            <summary>
+            Writes trace information, a data object and event information to the listener specific output.
+            </summary>
+            <param name="eventCache">A TraceEventCache object that contains the current process ID, thread ID, and stack trace information.</param>
+            <param name="source">A name used to identify the output, typically the name of the application that generated the trace event.</param>
+            <param name="eventType">One of the TraceEventType values specifying the type of event that has caused the trace.</param>
+            <param name="id">A numeric identifier for the event.</param>
+            <param name="data">The trace data to emit.</param>
+        </member>
+        <member name="T:Tridion.Logging.TridionLogger">
+            <summary>
+            Wrapper around Tridion.Logger which uses default its implementation for messages logging. <see cref="T:Tridion.Logging.Logger"/>
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TridionLogger.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the TridionLogger <see cref="T:Tridion.Logging.TridionLogger"/>.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TridionLogger.Log``1(Microsoft.Extensions.Logging.LogLevel,Microsoft.Extensions.Logging.EventId,``0,System.Exception,System.Func{``0,System.Exception,System.String})">
+            <summary>
+            Writes the specified exception to the log with specified severity.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TridionLogger.IsEnabled(Microsoft.Extensions.Logging.LogLevel)">
+            <summary>
+            Issues the enabled.
+            </summary>
+            <param name="logLevel">.Net Core Log level.</param>
+        </member>
+        <member name="M:Tridion.Logging.TridionLogger.BeginScope``1(``0)">
+            <summary>
+            Not implemented method.
+            </summary>
+        </member>
+        <member name="T:Tridion.Logging.TridionLoggerProvider">
+            <summary>
+            TridionLogger <see cref="T:Tridion.Logging.TridionLogger"/> provider.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TridionLoggerProvider.Dispose">
+            <summary>
+            Releases all resource used by the <see cref="T:Tridion.Logging.TridionLogger"/>.
+            </summary>
+        </member>
+        <member name="M:Tridion.Logging.TridionLoggerProvider.CreateLogger(System.String)">
+            <summary>
+            Get a <see cref="T:Tridion.Logging.TridionLogger"/> instance to the category name provided.
+            </summary>
+            <returns><see cref="T:Tridion.Logging.TridionLogger"/> instance.</returns>
+            <param name="categoryName">Category name.</param>
+        </member>
+    </members>
+</doc>

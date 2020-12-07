@@ -1,0 +1,3992 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sdl.Tridion.Api.Client</name>
+    </assembly>
+    <members>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ContentQuery">
+            <summary>
+            The query root for the GraphQL Public Content API.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.BinaryComponent">
+            <summary>
+            Returns the binary component given its CM_URI (takes precedence over the other arguments).ONLY if CM_URI is not specified, the binary is identified by its namespaceId, publicationId and binaryId. Alternatively a binary varinat URL can be used instead of a binary ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.BinaryLink">
+            <summary>
+            Resolve a link by parameters.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.Categories">
+            <summary>
+            Returns the categories for the given namespace and publication IDs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.ComponentLink">
+            <summary>
+            Resolve a link by parameters.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.ComponentPresentation">
+            <summary>
+            Returns the component presentation given the namespace, publication, component and template IDs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.ComponentPresentations">
+            <summary>
+            Get a list of component presentations filtered by set of criteria.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.DynamicComponentLink">
+            <summary>
+            Resolve a link by parameters.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.Items">
+            <summary>
+            Get a list of items filtered by set of criteria.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.Keyword">
+            <summary>
+            Returns the keyword for the given namespace, publication, category and keyword IDs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.Page">
+            <summary>
+            Returns the page given its CM_URI. Takes precedence over the other arguments.ONLY If CM_URI is not specified, the page is identified by its namespaceId, publicationId and pageId. Alternatively a page URL can be used instead of a page ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.PageLink">
+            <summary>
+            Resolve a link by parameters.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.Pages">
+            <summary>
+            Returns the list of pages matching the provided namespace ID and page URL.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.Publication">
+            <summary>
+            Returns the publication given the specified namespace and publication IDs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.PublicationMapping">
+            <summary>
+            Returns the publication mapping given the specified namespace and site URL.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.Publications">
+            <summary>
+            Returns the list of publications given the namespace ID and an optional filter.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.StructureGroup">
+            <summary>
+            Returns the structure group for the given namespace, publication and structure group IDs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.StructureGroups">
+            <summary>
+            Returns the structure groups for the given namespace and publication IDs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.Sitemap">
+            <summary>
+            Get sitemap
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContentQuery.SitemapSubtree">
+            <summary>
+            Get sitemap subtree
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent">
+            <summary>
+            Represents a component which has binary content.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.SchemaId">
+            <summary>
+            Returns the schema ID for the component.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.Taxonomies">
+            <summary>
+            Returns the list of taxonomies for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.Type">
+            <summary>
+            Identifies the type of the binary component.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.Variants">
+            <summary>
+            Returns the variants of the binary component.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryComponent.MultiMedia">
+            <summary>
+            Returns true if the component is a multimedia (binary) component.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.CustomMetaConnection">
+            <summary>
+            A connection to a list of items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMetaConnection.Edges">
+            <summary>
+            a list of edges
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.CustomMetaEdge">
+            <summary>
+            An edge in a connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMetaEdge.Node">
+            <summary>
+            The item at the end of the edge
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMetaEdge.Cursor">
+            <summary>
+            cursor marks a unique position or index into the connection
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.CustomMeta">
+            <summary>
+            Represents custom metadata.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMeta.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMeta.ItemId">
+            <summary>
+            Identifies the item ID of the custom meta.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMeta.Key">
+            <summary>
+            Identifies the key of the custom meta.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMeta.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the custom meta.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMeta.PublicationId">
+            <summary>
+            Identifies the publication ID of the custom meta.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMeta.Value">
+            <summary>
+            Identifies the value of the custom meta.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.CustomMeta.ValueType">
+            <summary>
+            Identifies the value type of the custom meta.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.CustomMetaValueType.STRING">
+            <summary>
+            STRING
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.CustomMetaValueType.DATE">
+            <summary>
+            DATE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.CustomMetaValueType.FLOAT">
+            <summary>
+            FLOAT
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.CustomMetaValueType.NUMBER">
+            <summary>
+            NUMBER
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem">
+            <summary>
+            Represents a taxonomy item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.Children">
+            <summary>
+            Returns the child taxonomies for the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.Depth">
+            <summary>
+            Returns the depth (level) of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.Key">
+            <summary>
+            Returns the key of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.Parent">
+            <summary>
+            Returns the parent taxonomy of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.TaxonomyId">
+            <summary>
+            Identifies the ID of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.TaxonomyType">
+            <summary>
+            Identifies the type of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.HasChildren">
+            <summary>
+            Returns true if the taxonomy has child taxonomies.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.Abstract">
+            <summary>
+            Returns true if the taxonomy is abstract.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaxonomyItem.Navigable">
+            <summary>
+            Returns true if the taxonomy is navigable.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.TaxonomyItemConnection">
+            <summary>
+            A connection to a list of items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomyItemConnection.Edges">
+            <summary>
+            a list of edges
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.TaxonomyItemEdge">
+            <summary>
+            An edge in a connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomyItemEdge.Node">
+            <summary>
+            The item at the end of the edge
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomyItemEdge.Cursor">
+            <summary>
+            cursor marks a unique position or index into the connection
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.TaxonomyType.KEYWORD">
+            <summary>
+            KEYWORD
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.TaxonomyType.CATEGORY">
+            <summary>
+            CATEGORY
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.BinaryVariantConnection">
+            <summary>
+            A connection to a list of items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariantConnection.Edges">
+            <summary>
+            a list of edges
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.BinaryVariantEdge">
+            <summary>
+            An edge in a connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariantEdge.Node">
+            <summary>
+            The item at the end of the edge
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariantEdge.Cursor">
+            <summary>
+            cursor marks a unique position or index into the connection
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.BinaryVariant">
+            <summary>
+            Represents a variant of a binary component.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariant.BinaryId">
+            <summary>
+            Identifies the binary ID of the variant.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariant.Description">
+            <summary>
+            Returns the description of the variant.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariant.DownloadUrl">
+            <summary>
+            Identifies the binary content URL of the variant.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariant.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariant.Path">
+            <summary>
+            Identifies the path of the variant.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariant.Type">
+            <summary>
+            Identifies the type of the variant.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariant.Url">
+            <summary>
+            Identifies the relative binary content URL of the variant.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.BinaryVariant.VariantId">
+            <summary>
+            Identifies the variant ID of the variant.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.IContentComponent">
+            <summary>
+            Represents a component which has content.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.SchemaId">
+            <summary>
+            Returns the schema ID for the component.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.Taxonomies">
+            <summary>
+            Returns the list of taxonomies for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentComponent.MultiMedia">
+            <summary>
+            Returns true if the component is a multimedia (binary) component.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.IItem">
+            <summary>
+            Represents an item. The root of all content models.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IItem.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.InputClaimValue">
+            <summary>
+            Represents an Ambient Data Framework claim value.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputClaimValue.Type">
+            <summary>
+            The claim value type.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputClaimValue.Uri">
+            <summary>
+            The claim URI.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputClaimValue.Value">
+            <summary>
+            The claim Value.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ClaimValueType">
+            <summary>
+            Represents the type of claim value.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.ClaimValueType.STRING">
+            <summary>
+            A string value.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.ClaimValueType.DATE">
+            <summary>
+            A date value.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.ClaimValueType.FLOAT">
+            <summary>
+            A float value.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.ClaimValueType.NUMBER">
+            <summary>
+            A number value.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.Link">
+            <summary>
+            Represents a Link.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Link.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Link.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Link.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Link.Type">
+            <summary>
+            Link type.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Link.Url">
+            <summary>
+            Link url.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.LinkType">
+            <summary>
+            Represents the type of link.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.LinkType.PAGE">
+            <summary>
+            A page link.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.LinkType.COMPONENT">
+            <summary>
+            A component link.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.LinkType.BINARY">
+            <summary>
+            A binary link.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.KeywordConnection">
+            <summary>
+            A connection to a list of items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.KeywordConnection.Edges">
+            <summary>
+            a list of edges
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.KeywordEdge">
+            <summary>
+            An edge in a connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.KeywordEdge.Node">
+            <summary>
+            The item at the end of the edge
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.KeywordEdge.Cursor">
+            <summary>
+            cursor marks a unique position or index into the connection
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.Keyword">
+            <summary>
+            Represents a keyword taxonomy item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Children">
+            <summary>
+            Returns the child taxonomies for the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Depth">
+            <summary>
+            Returns the depth (level) of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Description">
+            <summary>
+            Returns the description of the keyword.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Key">
+            <summary>
+            Returns the key of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Name">
+            <summary>
+            Returns the name of the keyword.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Parent">
+            <summary>
+            Returns the parent taxonomy of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.TaxonomyId">
+            <summary>
+            Identifies the ID of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.TaxonomyType">
+            <summary>
+            Identifies the type of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.TotalRelatedItems">
+            <summary>
+            Returns total number of related items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.HasChildren">
+            <summary>
+            Returns true if the taxonomy has child taxonomies.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Abstract">
+            <summary>
+            Returns true if the taxonomy is abstract.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.Navigable">
+            <summary>
+            Returns true if the taxonomy is navigable.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Keyword.UsedForIdentification">
+            <summary>
+            Returns true if the keyword is used for identification.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation">
+            <summary>
+            Represents a component presentation which has a component associated with a template.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.Component">
+            <summary>
+            Returns the component of the component presentation.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.ComponentTemplate">
+            <summary>
+            Returns the component template of the component presentation.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.Content">
+            <summary>
+            Returns the content of the component presentation.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.RawContent">
+            <summary>
+            Returns the raw content of the component presentation.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentation.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.Template">
+            <summary>
+            Represents a template.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.OutputFormat">
+            <summary>
+            Returns the output format of the template.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.Priority">
+            <summary>
+            Returns the priority of the template.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Template.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContent.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContent.Type">
+            <summary>
+            Identifies the type of the content.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.RawContent">
+            <summary>
+            Represents an item with content.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.RawContent.CharSet">
+            <summary>
+            Returns the character set encoding of the string content.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.RawContent.Content">
+            <summary>
+            Returns the string content.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.RawContent.Data">
+            <summary>
+            Return content data
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.RawContent.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.IContentFragment">
+            <summary>
+            Represents a fragment of content.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.Content">
+            <summary>
+            Returns the content of this fragment.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContentFragment.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentationConnection">
+            <summary>
+            A connection to a list of items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentationConnection.Edges">
+            <summary>
+            a list of edges
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentationEdge">
+            <summary>
+            An edge in a connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentationEdge.Node">
+            <summary>
+            The item at the end of the edge
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ComponentPresentationEdge.Cursor">
+            <summary>
+            cursor marks a unique position or index into the connection
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.InputComponentPresentationFilter">
+            <summary>
+            Filter for the componentPresentation root query. When the filter is applied, only the component presentations matching the filter will be in the query result
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputComponentPresentationFilter.And">
+            <summary>
+            List of filters. Items in the query result will match ALL of the elements of the list
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputComponentPresentationFilter.Or">
+            <summary>
+            List of filters. Items in the query result will match ANY of the elements of the list
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputCustomMetaCriteria.Scope">
+            <summary>
+            If not given, defaults to Item
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.CriteriaScope.Publication">
+            <summary>
+            Publication
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.CriteriaScope.Item">
+            <summary>
+            Item
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Sdl.Tridion.Api.Client.ContentModel.InputDateRangeCriteriaImpl.End" -->
+        <!-- Badly formed XML comment ignored for member "P:Sdl.Tridion.Api.Client.ContentModel.InputDateRangeCriteriaImpl.Start" -->
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputDateRangeCriteriaImpl.Type">
+            <summary>
+            Date range type
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.DateRangeType.CREATION_DATE">
+            <summary>
+            CREATION_DATE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.DateRangeType.UPDATED_DATE">
+            <summary>
+            UPDATED_DATE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.DateRangeType.INITIAL_PUBLISH_DATE">
+            <summary>
+            INITIAL_PUBLISH_DATE
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputKeywordCriteria.CategoryId">
+            <summary>
+            Id of the category. Takes precedence over categoryName, if both are present
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputKeywordCriteria.KeywordId">
+            <summary>
+            Id of the keyword. Takes precedence over key, if both are present
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputSchemaCriteria.Id">
+            <summary>
+            Id of the schema. Takes precedence over title, if both are present
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputSchemaCriteria.Title">
+            <summary>
+            Title of the schema.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputTemplateCriteria.Id">
+            <summary>
+            Id of the template.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.InputSortParam">
+            <summary>
+            Represents a typical sort type. When used, the default sorting mechanism (by namespace and by id) is overridden
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputSortParam.Order">
+            <summary>
+            The sort order type.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputSortParam.SortBy">
+            <summary>
+            The item field used for sorting
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.SortOrderType">
+            <summary>
+            Represents a type of natural sort: descending or ascending
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortOrderType.Ascending">
+            <summary>
+            A string value
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.SortFieldType">
+            <summary>
+            These are the fields that allow sorting
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortFieldType.CREATION_DATE">
+            <summary>
+            CREATION_DATE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortFieldType.INITIAL_PUBLISH_DATE">
+            <summary>
+            INITIAL_PUBLISH_DATE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortFieldType.ITEM_ID">
+            <summary>
+            ITEM_ID
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortFieldType.ITEM_TYPE">
+            <summary>
+            ITEM_TYPE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortFieldType.LAST_PUBLISH_DATE">
+            <summary>
+            LAST_PUBLISH_DATE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortFieldType.NAMESPACE_ID">
+            <summary>
+            NAMESPACE_ID
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortFieldType.OWNING_PUBLICATION_ID">
+            <summary>
+            OWNING_PUBLICATION_ID
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortFieldType.PUBLICATION_ID">
+            <summary>
+            PUBLICATION_ID
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.SortFieldType.TITLE">
+            <summary>
+            TITLE
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ItemConnection">
+            <summary>
+            A connection to a list of items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ItemConnection.Edges">
+            <summary>
+            a list of edges
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ItemEdge">
+            <summary>
+            An edge in a connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ItemEdge.Node">
+            <summary>
+            The item at the end of the edge
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ItemEdge.Cursor">
+            <summary>
+            cursor marks a unique position or index into the connection
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.InputItemFilter">
+            <summary>
+            Item filter for the items root query. When the filter is applied, only the items matching the filter will be in the query result
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputItemFilter.And">
+            <summary>
+            List of filters. Items in the query result will match ALL of the elements of the list
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputItemFilter.ItemTypes">
+            <summary>
+            list of item types to be selected
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputItemFilter.NamespaceIds">
+            <summary>
+            list of namespace IDs
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputItemFilter.Or">
+            <summary>
+            List of filters. Items in the query result will match ANY of the elements of the list
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputItemFilter.PublicationIds">
+            <summary>
+            list of publication IDs
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.FilterItemType.PUBLICATION">
+            <summary>
+            PUBLICATION
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.FilterItemType.COMPONENT">
+            <summary>
+            COMPONENT
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.FilterItemType.COMPONENT_TEMPLATE">
+            <summary>
+            COMPONENT_TEMPLATE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.FilterItemType.PAGE">
+            <summary>
+            PAGE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.FilterItemType.PAGE_TEMPLATE">
+            <summary>
+            PAGE_TEMPLATE
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.FilterItemType.CATEGORY">
+            <summary>
+            CATEGORY
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.Page">
+            <summary>
+            Represents a page.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.ContainerItems">
+            <summary>
+            Returns the items in this container.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.Content">
+            <summary>
+            Returns the content in the page.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.FileName">
+            <summary>
+            Returns the file name path to the page.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.PageTemplate">
+            <summary>
+            Returns the template for the page.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.RawContent">
+            <summary>
+            Returns the raw content in the page.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.Taxonomies">
+            <summary>
+            Returns the list of taxonomies for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Page.Url">
+            <summary>
+            Identifies the URL of the page.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ContainerType">
+            <summary>
+            Represents the type of container.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.IContainer">
+            <summary>
+            Represents a container for items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContainer.ContainerItems">
+            <summary>
+            Returns the items in this container.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ITaggable">
+            <summary>
+            Represents a related set of entities.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ITaggable.Taxonomies">
+            <summary>
+            Returns the list of taxonomies for the item.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.PageConnection">
+            <summary>
+            A connection to a list of items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageConnection.Edges">
+            <summary>
+            a list of edges
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.PageEdge">
+            <summary>
+            An edge in a connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageEdge.Node">
+            <summary>
+            The item at the end of the edge
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageEdge.Cursor">
+            <summary>
+            cursor marks a unique position or index into the connection
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.Publication">
+            <summary>
+            Represents a publication.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.MultimediaPath">
+            <summary>
+            Returns the multimedia path for the publication.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.MultimediaUrl">
+            <summary>
+            Returns the multimedia URL for the publication.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.PublicationKey">
+            <summary>
+            Returns the publication key.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.PublicationPath">
+            <summary>
+            Returns the publication path.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.PublicationUrl">
+            <summary>
+            Returns the publication URL.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Publication.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.PublicationMapping">
+            <summary>
+            Represents a publication mapping.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationMapping.Domain">
+            <summary>
+            Returns the domain.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationMapping.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationMapping.Path">
+            <summary>
+            Returns the path.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationMapping.PathScanDepth">
+            <summary>
+            Returns the scan depth.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationMapping.Port">
+            <summary>
+            Returns the port.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationMapping.Protocol">
+            <summary>
+            Returns the protocol.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationMapping.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.PublicationConnection">
+            <summary>
+            A connection to a list of items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationConnection.Edges">
+            <summary>
+            a list of edges
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.PublicationEdge">
+            <summary>
+            An edge in a connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationEdge.Node">
+            <summary>
+            The item at the end of the edge
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PublicationEdge.Cursor">
+            <summary>
+            cursor marks a unique position or index into the connection
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.InputPublicationFilter">
+            <summary>
+            Represents a filter for a publication query.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputPublicationFilter.QueryType">
+            <summary>
+            Represents the query type for the filter.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputPublicationFilter.Value">
+            <summary>
+            Represents the value to filter by in the form of 'key=value' pair.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.InputPublicationFilter.ValueType">
+            <summary>
+            Represents the custom meta value type for the filter. UNKNOWN not supported. Defaults to 'String', if empty.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.StructureGroup">
+            <summary>
+            Represents a structure group.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.Children">
+            <summary>
+            Returns the child taxonomies for the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.Depth">
+            <summary>
+            Returns the depth (level) of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.Directory">
+            <summary>
+            Returns the directory of the structure group.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.Key">
+            <summary>
+            Returns the key of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.Parent">
+            <summary>
+            Returns the parent taxonomy of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.TaxonomyId">
+            <summary>
+            Identifies the ID of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.TaxonomyType">
+            <summary>
+            Identifies the type of the taxonomy.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.Title">
+            <summary>
+            Returns the title of the structure group.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.HasChildren">
+            <summary>
+            Returns true if the taxonomy has child taxonomies.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.Abstract">
+            <summary>
+            Returns true if the taxonomy is abstract.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroup.Navigable">
+            <summary>
+            Returns true if the taxonomy is navigable.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.StructureGroupConnection">
+            <summary>
+            A connection to a list of items.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroupConnection.Edges">
+            <summary>
+            a list of edges
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.StructureGroupEdge">
+            <summary>
+            An edge in a connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroupEdge.Node">
+            <summary>
+            The item at the end of the edge
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.StructureGroupEdge.Cursor">
+            <summary>
+            cursor marks a unique position or index into the connection
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.ClassifiedItemsCount">
+            <summary>
+            Classified Items Count
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.Description">
+            <summary>
+            Description
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.Items">
+            <summary>
+            Items
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.Key">
+            <summary>
+            Key
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.OriginalTitle">
+            <summary>
+            Original title
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.PublishedDate">
+            <summary>
+            The most recent date this item was published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.Title">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.Url">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.Abstract">
+            <summary>
+            Is Abstract
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.HasChildNodes">
+            <summary>
+            Has Child Nodes
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.TaxonomySitemapItem.Visible">
+            <summary>
+            Visible
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ISitemapItem">
+            <summary>
+            Sitemap Item
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ISitemapItem.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ISitemapItem.OriginalTitle">
+            <summary>
+            Original title
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ISitemapItem.PublishedDate">
+            <summary>
+            The most recent date this item was published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ISitemapItem.Title">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ISitemapItem.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ISitemapItem.Url">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ISitemapItem.Visible">
+            <summary>
+            Visible
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.Ancestor">
+            <summary>
+            Represents ancestor's behaviour of the sitemap subtree response.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ContentModel.Ancestor.NONE">
+            <summary>
+            By default, do not return ancestors of the given taxonomy node.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.Node">
+            <summary>
+            Represents a node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Node.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.UntypedContent">
+            <summary>
+            Untyped content where all data is available in a Map structure.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.UntypedContent.Data">
+            <summary>
+            Return content data
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.UntypedContent.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.UntypedContent.Type">
+            <summary>
+            Identifies the type of the content.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.Component">
+            <summary>
+            Represents a regular component.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.CreationDate">
+            <summary>
+            Returns the date the item was created.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.CustomMetas">
+            <summary>
+            Returns the custom meta data for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.InitialPublishDate">
+            <summary>
+            Returns the date the item was initially published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.ItemId">
+            <summary>
+            Identifies the item ID.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.ItemType">
+            <summary>
+            Returns the item type of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.LastPublishDate">
+            <summary>
+            Returns the date the item was most recently published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.NamespaceId">
+            <summary>
+            Identifies the namespace ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.OwningPublicationId">
+            <summary>
+            Returns the publication ID of the publication to which this item belongs.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.PublicationId">
+            <summary>
+            Identifies the publication ID of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.SchemaId">
+            <summary>
+            Returns the schema ID for the component.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.Taxonomies">
+            <summary>
+            Returns the list of taxonomies for the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.Title">
+            <summary>
+            Returns the title of the item.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.UpdatedDate">
+            <summary>
+            Returns the date the item was updated.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Component.MultiMedia">
+            <summary>
+            Returns true if the component is a multimedia (binary) component.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageSitemapItem.Id">
+            <summary>
+            Identifies the unique ID of the node.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageSitemapItem.OriginalTitle">
+            <summary>
+            Original title
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageSitemapItem.PublishedDate">
+            <summary>
+            The most recent date this item was published.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageSitemapItem.Title">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageSitemapItem.Type">
+            <summary>
+            Type
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageSitemapItem.Url">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.PageSitemapItem.Visible">
+            <summary>
+            Visible
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ClaimValue">
+            <summary>
+            Represents an Ambient Data Framework claim value.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ClaimValue.Type">
+            <summary>
+            The claim value type.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ClaimValue.Uri">
+            <summary>
+            The claim URI.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ClaimValue.Value">
+            <summary>
+            The claim Value.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ContentNamespace">
+            <summary>
+            Content Namespace
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.ContextData">
+            <summary>
+            Context Data
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.ContextData.ClaimValues">
+            <summary>
+            List of claim values to pass to query.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.IContextData">
+            <summary>
+            Context Data
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IContextData.ClaimValues">
+            <summary>
+            List of claim values to pass to query.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.IPagination">
+            <summary>
+            Cursor-Based Pagination
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IPagination.First">
+            <summary>
+            Return the first n number of results
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.IPagination.After">
+            <summary>
+            Start returning results after the specified cursor. 
+            <remarks>Place your cursor on edges in your query.</remarks>
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ContentModel.Pagination">
+            <summary>
+            Cursor-Based Pagination
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Pagination.First">
+            <summary>
+            Return the first n number of results
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ContentModel.Pagination.After">
+            <summary>
+            Start returning results after the specified cursor. 
+            <remarks>Place your cursor on edges in your query.</remarks>
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.Core.ILogger">
+            <summary>
+            ILogger interface used for logging.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.Core.NullLogger">
+            <summary>
+            Default implementation for logging
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.IApiClientAsync">
+            <summary>
+            Content Api (async)
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ItemTypes">
+            <summary>
+            Defines for system defined item types.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ItemType">
+            <summary>
+            Specifies the Content Manager item types.
+            </summary>
+            <remarks>
+            This enumeration defines both the symbolic names and numeric values for all TCM item types.
+            The numeric values are used in TCM URIs.
+            Note that the numeric values look like bit flags, but they are not really: 
+            repository-local, system-wide and workflow item types have overlapping bit values.
+            Therefore, performing bitwise ORs or ANDs is dangerous; it can only be done for item types of
+            the same "class" (repository-local, system-wide or workflow).
+            </remarks>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.IApiClient">
+            <summary>
+            Content Api
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.GlobalContextData">
+            <summary>
+            Holds global context data passed on to PCA service. Note that context data passed
+            directly to API methods overwrites these values.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.DefaultContentType">
+            <summary>
+            Specify type of content to return from API. When set to RAW no conversion will take
+            place otherwise its treated as model data and will go through conversion to type specified
+            by DefaultModelType (default: Model)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.DefaultModelType">
+            <summary>
+            Specify model type to return (default: R2)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.TcdlLinkRenderingType">
+            <summary>
+            Specify how tcdl links get rendered (default: relative)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.ModelSericeLinkRenderingType">
+            <summary>
+            Specify how the model-service plugin renders links (default: relative)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.TcdlLinkUrlPrefix">
+            <summary>
+            Specify Url prefix for tcdl links for Absolute rendering type (default: none)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.TcdlBinaryLinkUrlPrefix">
+            <summary>
+            Specify Url prefix for tcdl binary links for Absolute rendering type (default: none)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.ThrowOnAnyError">
+            <summary>
+            Specify if the GraphQL client should throw on any error or try to continue deserialization.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.HasErrors">
+            <summary>
+            Returns true if any errors were found during last GraphQL request.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.IApiClient.LastErrors">
+            <summary>
+            Return list of GraphQL errors.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetComponentPresentation(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,System.Int32,System.String,Sdl.Tridion.Api.Client.ContentIncludeMode,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Returns the component presentation given the namespace, publication, component and template IDs.
+            </summary>
+            <param name="ns">Namespace</param>
+            <param name="publicationId">Publication Id</param>
+            <param name="componentId">Component Id</param>
+            <param name="templateId">Template Id</param>
+            <param name="customMetaFilter">Custom Meta Filter</param>
+            <param name="contentIncludeMode">Specify if content should be included</param>
+            <param name="contextData">Context data</param>
+            <returns>Component Presentation</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetComponentPresentations(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,Sdl.Tridion.Api.Client.ContentModel.InputComponentPresentationFilter,Sdl.Tridion.Api.Client.ContentModel.InputSortParam,Sdl.Tridion.Api.Client.ContentModel.IPagination,System.String,Sdl.Tridion.Api.Client.ContentIncludeMode,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Get a list of component presentations filtered by set of criteria.
+            </summary>
+            <param name="ns">Namespace</param>
+            <param name="publicationId">Publication Id</param>
+            <param name="filter">Filter</param>
+            <param name="sort">Sort Order</param>
+            <param name="pagination">Pagination</param>
+            <param name="customMetaFilter">Custom Meta Filter</param>
+            <param name="contentIncludeMode">Specify if content should be included</param>
+            <param name="contextData">Context data</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetPage(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,System.String,Sdl.Tridion.Api.Client.ContentIncludeMode,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Returns the page given its page ID
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="pageId"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contentIncludeMode"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetPage(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.String,System.String,Sdl.Tridion.Api.Client.ContentIncludeMode,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Return page by Url.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="url"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contentIncludeMode"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetPage(Sdl.Tridion.Api.Client.Utils.CmUri,System.String,Sdl.Tridion.Api.Client.ContentIncludeMode,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Return page by CM Uri.
+            </summary>
+            <param name="cmUri"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contentIncludeMode"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetPages(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,Sdl.Tridion.Api.Client.ContentModel.IPagination,System.String,System.String,Sdl.Tridion.Api.Client.ContentIncludeMode,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Returns the list of pages matching the provided namespace ID and page URL.
+            </summary>
+            <param name="ns"></param>
+            <param name="pagination"></param>
+            <param name="url"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contentIncludeMode"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetBinaryComponent(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,System.String,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Returns the binary component given a binary ID.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="binaryId"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetBinaryComponent(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.String,System.String,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Returns the binary component given a Url.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="url"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetBinaryComponent(Sdl.Tridion.Api.Client.Utils.CmUri,System.String,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Returns the binary component given a CM Uri.
+            </summary>
+            <param name="cmUri"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.ExecuteItemQuery(Sdl.Tridion.Api.Client.ContentModel.InputItemFilter,Sdl.Tridion.Api.Client.ContentModel.InputSortParam,Sdl.Tridion.Api.Client.ContentModel.IPagination,System.String,Sdl.Tridion.Api.Client.ContentIncludeMode,System.Boolean,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Execute item query given a filter.
+            </summary>
+            <param name="filter"></param>
+            <param name="sort"></param>
+            <param name="pagination"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contentIncludeMode"></param>
+            <param name="includeContainerItems"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetPublication(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.String,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Get publication given a publication ID.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetPublications(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,Sdl.Tridion.Api.Client.ContentModel.IPagination,Sdl.Tridion.Api.Client.ContentModel.InputPublicationFilter,System.String,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Get a list of publications given a filter.
+            </summary>
+            <param name="ns"></param>
+            <param name="pagination"></param>
+            <param name="filter"></param>
+            <param name="customMetaFilter"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.ResolvePageLink(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Resolve page link.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="pageId"></param>
+            <param name="renderRelativeLink"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.ResolveComponentLink(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Boolean)">
+            <summary>
+            Resolve component link.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="componentId"></param>
+            <param name="sourcePageId"></param>
+            <param name="excludeComponentTemplateId"></param>
+            <param name="renderRelativeLink"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.ResolveBinaryLink(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,System.String,System.Boolean)">
+            <summary>
+            Resolve binary link.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="binaryId"></param>
+            <param name="variantId"></param>
+            <param name="renderRelativeLink"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.ResolveDynamicComponentLink(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Resolve dynamic component link.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="pageId"></param>
+            <param name="componentId"></param>
+            <param name="templateId"></param>
+            <param name="renderRelativeLink"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetPublicationMapping(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.String)">
+            <summary>
+            Get publication mapping for url.
+            </summary>
+            <param name="ns"></param>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetPageModelData(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.String,Sdl.Tridion.Api.Client.PageInclusion,Sdl.Tridion.Api.Client.ContentIncludeMode,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Get page model data given a Url.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="url"></param>
+            <param name="pageInclusion"></param>
+            <param name="contentIncludeMode"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetPageModelData(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,Sdl.Tridion.Api.Client.PageInclusion,Sdl.Tridion.Api.Client.ContentIncludeMode,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Get page model data given a page ID
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="pageId"></param>
+            <param name="pageInclusion"></param>
+            <param name="contentIncludeMode"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetEntityModelData(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,System.Int32,Sdl.Tridion.Api.Client.ContentIncludeMode,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Get entity model data given an entity and template ID.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="entityId"></param>
+            <param name="templateId"></param>
+            <param name="contentIncludeMode"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetSitemap(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.Int32,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Get sitemap.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="descendantLevels"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.IApiClient.GetSitemapSubtree(Sdl.Tridion.Api.Client.ContentModel.ContentNamespace,System.Int32,System.String,System.Int32,Sdl.Tridion.Api.Client.ContentModel.Ancestor,Sdl.Tridion.Api.Client.ContentModel.IContextData)">
+            <summary>
+            Get sitemap subtree for a specific taxonomy node.
+            </summary>
+            <param name="ns"></param>
+            <param name="publicationId"></param>
+            <param name="taxonomyNodeId"></param>
+            <param name="descendantLevels"></param>
+            <param name="ancestor"></param>
+            <param name="contextData"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ClaimUris">
+            <summary>
+            Claim Values for PCA Model Service Plugin
+            These are used to control the plugin behaviour 
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.ContentType">
+            <summary>
+            Claim Uri for content type argument.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.ModelType">
+            <summary>
+            Claim Uri for model type argument
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.PageIncludeRegions">
+            <summary>
+            Claim Uri for page include argument
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.PageExpansionDepth">
+            <summary>
+            Claim Uri for page expansion depth argument. The number should be greater than 0.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.EntityResolveLinks">
+            <summary>
+            Claim Uri for component presentation link expansion when converting DD4T to R2.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.EntityDcpType">
+            <summary>
+            Claim Uri for strategy of DCP template resolving is template ID is missing.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.ModelServiceLinkRendering">
+            <summary>
+            Claim Uri for controlling how the model-service plugin renders links
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.TcdlLinkRendering">
+            <summary>
+            Claim Uri for controlling how tcdl links get rendered
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.TcdlLinkUrlPrefix">
+            <summary>
+            Claim Uri for tcdl link url prefix
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.Client.ClaimUris.TcdlBinaryLinkUrlPrefix">
+            <summary>
+            Claim Uri for tcdl binary link url prefix
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.QueryBuilder">
+            <summary>
+            QueryBuilder
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.ApiClient">
+            <summary>
+            Content Api
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ApiClient.GlobalContextData">
+            <summary>
+            Holds global context data passed on to PCA service. Note that context data passed
+            directly to API methods overwrites these values.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ApiClient.DefaultContentType">
+            <summary>
+            Specify type of content to return from API. When set to RAW no conversion will take
+            place otherwise its treated as model data and will go through conversion to type specified
+            by DefaultModelType (default: Model)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ApiClient.DefaultModelType">
+            <summary>
+            Specify model type to return (default: R2)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ApiClient.TcdlLinkRenderingType">
+            <summary>
+            Specify how tcdl links get rendered (default: relative)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ApiClient.ModelSericeLinkRenderingType">
+            <summary>
+            Specify how the model-service plugin renders links (default: relative)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ApiClient.TcdlLinkUrlPrefix">
+            <summary>
+            Specify Url prefix for tcdl links for Absolute rendering type (default: none)
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Client.ApiClient.TcdlBinaryLinkUrlPrefix">
+            <summary>
+            Specify Url prefix for tcdl binary links for Absolute rendering type (default: none)
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.Queries">
+            <summary>
+            GraphQL Queries
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.GraphQLRequests">
+            <summary>
+            Predefined GraphQL requests for working with the Public Content Api
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.Utils.CmUri">
+            <summary>
+            CmUri provides a handy way to deal with CM (Sites+Docs) uris
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Client.Utils.QueryHelpers">
+            <summary>
+            This class provides simple helper functions to clean up and handle some special custom graphQL script
+            features.
+            TODO: Should clean this up and replace with regexps at some point.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Client.Utils.QueryHelpers.ParseIncludeRegions(System.String,System.String,System.Boolean)">
+            <summary>
+            Remove regions from a query based on include parameter given the following query syntax:
+             {regionName}? {
+                query region to exclude/include
+             }
+            </summary>
+            <param name="query">Query</param>
+            <param name="regionName">Region name</param>
+            <param name="include">Determine if we should include/exclude</param>
+            <returns>Rebuilt query</returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.Exceptions.GraphQLClientException">
+            <summary>
+            GraphQL Client Exception
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Exceptions.GraphQLClientException.StatusCode">
+            <summary>
+            Http Status Code of request
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Exceptions.GraphQLClientException.GraphQLResponse">
+            <summary>
+            GraphQL Response.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Exceptions.GraphQLClientException.Response">
+            <summary>
+            Response of request.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient">
+            <summary>
+            GraphQL Client
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.ThrowOnAnyError">
+            <summary>
+            Throw exception on any GraphQL errors.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.Timeout">
+            <summary>
+            Get/Sets the timeout (ms) for the requests.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.HttpClient">
+            <summary>
+            HttpClient used for performing the actual request.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.Execute(Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest)">
+            <summary>
+            Execute a GraphQL request
+            </summary>
+            <param name="request">Fully built GraphQL request</param>
+            <returns>GraphQL Response</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.Execute``1(Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest)">
+            <summary>
+            Execute a GraphQL request
+            </summary>
+            <typeparam name="T">Target Type of response data</typeparam>
+            <param name="request">GraphQL request</param>
+            <returns>GraphQL Response</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.ExecuteAsync(Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest,System.Threading.CancellationToken)">
+            <summary>
+            Execute a GraphQL request (async)
+            </summary>
+            <param name="request">Fully built GraphQL request</param>
+            <returns>GraphQL Response</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.ExecuteAsync``1(Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest,System.Threading.CancellationToken)">
+            <summary>
+            Execute a GraphQL request (async)
+            </summary>
+            <typeparam name="T">Target Type of response data</typeparam>
+            <param name="request">GraphQL request</param>
+            <returns>GraphQL Response</returns>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.Schema">
+            <summary>
+            Gets GraphQL Schema from the GraphQL service.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.SchemaAsync">
+            <summary>
+            Gets GraphQL Schema from the GraphQL service (async).
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.GraphQLClient.LastErrors">
+            <summary>
+            Returns the last errors that occured during the GraphQL request
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient">
+            <summary>
+            GraphQL Client
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.ThrowOnAnyError">
+            <summary>
+            Throw exception on any GraphQL errors.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.Timeout">
+            <summary>
+            Get/Sets the timeout (ms) for the requests.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.HttpClient">
+            <summary>
+            HttpClient used for performing the actual request.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.Execute(Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest)">
+            <summary>
+            Execute a GraphQL request
+            </summary>
+            <param name="request">Fully built GraphQL request</param>
+            <returns>GraphQL Response</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.Execute``1(Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest)">
+            <summary>
+            Execute a GraphQL request
+            </summary>
+            <typeparam name="T">Target Type of response data</typeparam>
+            <param name="request">GraphQL request</param>
+            <returns>GraphQL Response</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.ExecuteAsync(Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest,System.Threading.CancellationToken)">
+            <summary>
+            Execute a GraphQL request (async)
+            </summary>
+            <param name="request">Fully built GraphQL request</param>
+            <returns>GraphQL Response</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.ExecuteAsync``1(Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest,System.Threading.CancellationToken)">
+            <summary>
+            Execute a GraphQL request (async)
+            </summary>
+            <typeparam name="T">Target Type of response data</typeparam>
+            <param name="request">GraphQL request</param>
+            <returns>GraphQL Response</returns>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.Schema">
+            <summary>
+            Gets GraphQL Schema from the GraphQL service.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.SchemaAsync">
+            <summary>
+            Gets GraphQL Schema from the GraphQL service (async).
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.IGraphQLClient.LastErrors">
+            <summary>
+            Returns the last errors that occured during the GraphQL request
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.QueryResources">
+            <summary>
+            GraphQL Query Resource Handling
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.Request.BatchGraphQLRequest">
+            <summary>
+            Provide Batch GraphQL requests to let you build multiple GraphQL requests and
+            execute them in a single http request.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest">
+            <summary>
+            Represents a GraphQL request.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest.Authenticaton">
+            <summary>
+            Get/Set Authentication used for this request.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest.OperationName">
+            <summary>
+            GraphQL Operation Name.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest.Query">
+            <summary>
+            GraphQL Query in Json format.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest.Variables">
+            <summary>
+            GraphQL Variables.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest.Headers">
+            <summary>
+            Http Headers to pass along during request.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest.Binder">
+            <summary>
+            Serialization Binder used during deserialization of result.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest.Convertors">
+            <summary>
+            Json Serialization Convertors used during deserialization of result.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest.AddVariable(System.String,System.Object)">
+            <summary>
+            Add Variable to request.
+            </summary>
+            <param name="name">Name of variable.</param>
+            <param name="value">Value of variable.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.Request.GraphQLRequest.Serialize">
+            <summary>
+            Serialize the request for http transport.
+            </summary>
+            <returns>Serialized request.</returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest">
+            <summary>
+            GraphQL Request
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest.Query">
+            <summary>
+            GraphQL Query
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest.OperationName">
+            <summary>
+            GraphQL Operation Name
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest.Variables">
+            <summary>
+            GraphQL Variables
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest.Authenticaton">
+            <summary>
+            Authentication used for request
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest.Headers">
+            <summary>
+            Request Headers
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest.AddVariable(System.String,System.Object)">
+            <summary>
+            Add Variable
+            </summary>
+            <param name="name">Variable name</param>
+            <param name="value">Variable value</param>
+            <returns>The request</returns>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest.Binder">
+            <summary>
+            Serialization binder used when deserializing the request.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest.Convertors">
+            <summary>
+            Convertor used when deserialzing the request
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.GraphQL.Client.Request.IGraphQLRequest.Serialize">
+            <summary>
+            Serialize the GraphQL Request
+            </summary>
+            <returns>Serialized Request</returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLError">
+            <summary>
+            GraphQL Error holds error information regarding the failed request.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLError.Message">
+            <summary>
+            Error message.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLError.Path">
+            <summary>
+            Path to the error within the GraphQL query.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLError.Locations">
+            <summary>
+            Locations of all errors within the GraphQL query.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLError.Extensions">
+            <summary>
+            GraphQL extensions.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLErrorLocation">
+            <summary>
+            GraphQL Error locations.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLErrorLocation.Line">
+            <summary>
+            Error line number.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLErrorLocation.Column">
+            <summary>
+            Error column number.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLResponse">
+            <summary>
+            Represents the GraphQL respinse
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLResponse.Data">
+            <summary>
+            GraphQL Data
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLResponse.Errors">
+            <summary>
+            GraphQL Errors
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.GraphQLResponse.Headers">
+            <summary>
+            Response headers
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.Response.IGraphQLResponse">
+            <summary>
+            Represents the GraphQL respinse
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.IGraphQLResponse.Data">
+            <summary>
+            GraphQL Data
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.IGraphQLResponse.Errors">
+            <summary>
+            GraphQL Errors
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.IGraphQLResponse.Headers">
+            <summary>
+            Response headers
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.GraphQL.Client.Response.IGraphQLTypedResponse`1">
+            <summary>
+            Typed GraphQL response for deserialization of results to strongly typed content model.
+            </summary>
+            <typeparam name="T">Type to deserialize results</typeparam>
+        </member>
+        <member name="P:Sdl.Tridion.Api.GraphQL.Client.Response.IGraphQLTypedResponse`1.TypedResponseData">
+            <summary>
+            Get typed response data from GraphQL request.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.Auth.IAuthentication">
+            <summary>
+            Authentication
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Http.Client.Auth.IAuthentication.ApplyManualAuthentication(Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest)">
+            <summary>
+            Provide manual authentication to request (instead of server challange)
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.Exceptions.HttpClientException">
+            <summary>
+            Http Client Exception
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.HttpClient">
+            <summary>
+            Http Client
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.HttpHeaders">
+            <summary>
+            Http Headers
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.HttpQueryParams">
+            <summary>
+            Http Query Parameters
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.IHttpClient">
+            <summary>
+            Http Client
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.Request.HttpClientRequest">
+            <summary>
+            Http Client Request
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest">
+            <summary>
+            Http Client Request
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.AbsoluteUri">
+            <summary>
+            Absolute Uri
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.Path">
+            <summary>
+            Path
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.Method">
+            <summary>
+            Http Method
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.ContentType">
+            <summary>
+            Content Type
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.Body">
+            <summary>
+            Request Body
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.QueryParameters">
+            <summary>
+            Query Parameters
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.Headers">
+            <summary>
+            Request Headers
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.Authenticaton">
+            <summary>
+            Authentication
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.BuildRequestUri(Sdl.Tridion.Api.Http.Client.IHttpClient)">
+            <summary>
+            Builds full request uri
+            </summary>
+            <param name="httpClient">Http Client</param>
+            <returns>Full Uri of request</returns>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.Binder">
+            <summary>
+            Serialization binder used when deserializing the request.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Request.IHttpClientRequest.Convertors">
+            <summary>
+            Convertor used when deserialzing the request
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.Response.HttpClientResponse`1">
+            <summary>
+            Http Client Response
+            </summary>
+            <typeparam name="T">Type tp use for deserialized data</typeparam>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.Response.IHttpClientResponse`1">
+            <summary>
+            Http Client Response
+            </summary>
+            <typeparam name="T">Type used to deserialize response data</typeparam>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Response.IHttpClientResponse`1.StatusCode">
+            <summary>
+            Status Code
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Response.IHttpClientResponse`1.ContentType">
+            <summary>
+            Content Type
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Response.IHttpClientResponse`1.Headers">
+            <summary>
+            Response Headers
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.Http.Client.Response.IHttpClientResponse`1.ResponseData">
+            <summary>
+            Response Data
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.Utils.UriCreator">
+            <summary>
+            Uri Creator
+            
+            Utility class for building full absolute Uris from parts of paths and query parameters.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.Http.Client.Utils.UrlEncoding">
+            <summary>
+            Url encoding utilities.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Http.Client.Utils.UrlEncoding.UrlEncodeNonAscii(System.String)">
+            <summary>
+            Encode all non ascii characters.
+            </summary>
+            <param name="str">String to encode</param>
+            <returns>Url encoded string</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Http.Client.Utils.UrlEncoding.UrlEncodeNonAscii(System.String,System.Text.Encoding)">
+            <summary>
+            Encode all non ascii characters.
+            </summary>
+            <param name="str">String to encode</param>
+            <param name="e"></param>
+            <returns>Url encoded string</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Http.Client.Utils.UrlEncoding.UrlEncodeNonAscii(System.Byte[])">
+            <summary>
+            Encode all non ascii characters.
+            </summary>
+            <param name="bytes">Data to encode</param>
+            <returns>Url Encoded version</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.Http.Client.Utils.UrlEncoding.UrlPathEncode(System.String)">
+            <summary>
+            Performs an encoding of the url path. 
+            </summary>
+            <param name="url">Unencoded url path</param>
+            <returns>Encoded url path.</returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.BooleanOperationType">
+            <summary>
+            Operation Type of a Query part.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.IqQuery.BooleanOperationType.Unit">
+            <summary>
+            Unit Type
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.IqQuery.BooleanOperationType.And">
+            <summary>
+            And Type (+)
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.IqQuery.BooleanOperationType.Or">
+            <summary>
+            Or Type ( )
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.IqQuery.BooleanOperationType.Not">
+            <summary>
+            Not Type (-)
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.IBooleanOperation">
+            <summary>
+            Represents a Boolean Search Operation.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IBooleanOperation.And">
+            <summary>
+            Sets the next operation to be AND.
+            </summary>
+            <returns>The Query object.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IBooleanOperation.Or">
+            <summary>
+            Sets the next operation to be OR.
+            </summary>
+            <returns>The Query object.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IBooleanOperation.GroupEnd">
+            <summary>
+            Ends group.
+            </summary>
+            <returns>BooleanOperation object.</returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.ICriteria">
+            <summary>
+            Search Criteria. Sent to the search index.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.ICriteria.RawQuery">
+            <summary>
+            Gets the raw query.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult">
+            <summary>
+            Default Result fields.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.Id">
+            <summary>
+            Represents a unique key.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.Url">
+            <summary>
+            The Url.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.CreatedDate">
+            <summary>
+            The creation date.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.ModifiedDate">
+            <summary>
+            The modification date.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.Author">
+            <summary>
+            The author.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.MajorVersion">
+            <summary>
+            The major version.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.MinorVersion">
+            <summary>
+            The minor version.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.PublicationId">
+            <summary>
+            The publication id.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.PublicationTitle">
+            <summary>
+            The publication title.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.ItemType">
+            <summary>
+            Item Type.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.EntityName">
+            <summary>
+            Entity mapping name.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.Content">
+            <summary>
+            The content on which analysis takes place.
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.Fields">
+            <summary>
+            Fields
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IDefaultQueryResult.Highlighted">
+            <summary>
+            Highlighted Fields
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.IOperation">
+            <summary>
+            Base Operation interface.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IOperation.Compile">
+            <summary>
+            Compiles this instance. Final step before sending to the search index.
+            </summary>
+            <returns>A Criteria object for sending to the Query Service.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IOperation.SortByAscending(System.Collections.Generic.List{System.String})">
+            <summary>
+            Sorts results by the specified fields.
+            </summary>
+            <param name="fieldNames">fieldNames the field names to sort on</param>
+            <returns>A query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IOperation.SortByDescending(System.Collections.Generic.List{System.String})">
+            <summary>
+            Sorts results by the specified fields, descending.
+            </summary>
+            <param name="fieldNames">fieldNames the field names to sort on</param>
+            <returns>A query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IOperation.SortStringByAscending(System.Collections.Generic.List{System.String})">
+            <summary>
+            Sorts results by the specified string fields.
+            </summary>
+            <param name="fieldNames">fieldNames the field names to sort on</param>
+            <returns>A query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IOperation.SortStringByDescending(System.Collections.Generic.List{System.String})">
+            <summary>
+            Sorts results by the specified string fields, descending.
+            </summary>
+            <param name="fieldNames">fieldNames the field names to sort on</param>
+            <returns>A query object as boolean operation.</returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.IQuery">
+            <summary>
+            Represents a fluent query API. Based on Examine.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.GroupStart">
+            <summary>
+            Starts group.
+            </summary>
+            <returns>Query object.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Not">
+            <summary>
+            Starts group.
+            </summary>
+            <returns>Query object.</returns>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IQuery.BooleanOperation">
+            <summary>
+            Gets the current boolean operation of this Query.
+            </summary>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Id(System.String)">
+            <summary>
+            Searches for an Id.
+            </summary>
+            <param name="id">id</param>
+            <returns>The operation with an ID criteria.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Id(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Searches for an Id, separating the identifiers as int.
+            </summary>
+            <param name="sourceIdentifier">The source identifier. Currently either 'ish' or 'tcm'</param>
+            <param name="publicationId">The unique id</param>
+            <param name="itemId">The unique id</param>
+            <param name="itemType">The item type</param>
+            <returns>The operation with an ID criteria.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.MultiMatch(System.String)">
+            <summary>
+            Searches given text in both content and dynamically indexed fields with the following syntax:
+            "content.*","dynamic.*"
+            
+            The query operator is OR. Important note: the operator in multi match queries works on the given terms and not on the fields.
+            </summary>
+            <param name="query">The text to be searched.</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.MultiMatch(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Searches given text in the specified fields. This method must be used in case there is a requirement to perform a search in 
+            nested sub fields and the field names of the sub fields are unknown.
+            
+            Example: Query.multiMatch(Arrays.asList("content.*", "otherfields*"), "searchvalue");
+            
+            The query operator is OR. Important note: the operator in multi match queries works on the given terms and not on the fields.
+            </summary>
+            <param name="wildCardFieldNames"></param>
+            <param name="query">The text to be searched.</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.MultiMatch(System.Collections.Generic.List{System.String},System.String,Sdl.Tridion.Api.IqQuery.MatchOperation)">
+            <summary>
+            Searches given text in the specified fields. This method must be used in case there is a requirement to perform a search in 
+            nested sub fields and the field names of the sub fields are unknown.
+            
+            Example: Query.multiMatch(Arrays.asList("content.*", "otherfields*"), "searchvalue");
+            
+            The given query operator is used. Important note: the operator in multi match queries works on the given terms and not on the fields.
+            </summary>
+            <param name="wildCardFieldNames">The field names.</param>
+            <param name="query">The text to be searched.</param>
+            <param name="operation"></param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.ItemType(System.String)">
+            <summary>
+            Searches or constrains to item types.
+            </summary>
+            <param name="itemType">The item type</param>
+            <returns>Operation with an ItemType criteria.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Field(System.String,System.String)">
+            <summary>
+            Default text query on a field.
+            </summary>
+            <param name="fieldName">the fieldname</param>
+            <param name="fieldValue">the search string</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Field(System.String,Sdl.Tridion.Api.IqQuery.ITermValue)">
+            <summary>
+            Default text query on a field.
+            </summary>
+            <param name="fieldName">the fieldname</param>
+            <param name="fieldValue">the search string</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Field(System.String,System.Object)">
+            <summary>
+            Default text query on a field.
+            </summary>
+            <param name="fieldName">the fieldname</param>
+            <param name="fieldValue">the search string</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.DateTimeOffset,System.DateTimeOffset)">
+            <summary>
+            Query on date range.
+            </summary>
+            <param name="fieldName">the fieldname</param>
+            <param name="lower">lower bounds</param>
+            <param name="upper">upper bounds</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.DateTimeOffset,System.DateTimeOffset,System.Boolean,System.Boolean)">
+            <summary>
+            Query on date range.
+            </summary>
+            <param name="fieldName">fieldname</param>
+            <param name="lower">lower bounds</param>
+            <param name="upper">upper bounds</param>
+            <param name="includeLower">boolean to include the lower range.</param>
+            <param name="includeUpper">boolean to include the upper range.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.Int32,System.Int32)">
+            <summary>
+            Query on an int range.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower bound.</param>
+            <param name="upper">upper bound</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            Query on an int range, with the option to include the lower and upper bounds.
+            Basically a &gt;= &lt;= query.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower range</param>
+            <param name="upper">upper range</param>
+            <param name="includeLower">boolean to include the lower range.</param>
+            <param name="includeUpper">boolean to include the upper range.</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.Double,System.Double)">
+            <summary>
+            Query on a double range.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower range</param>
+            <param name="upper">upper range</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.Double,System.Double,System.Boolean,System.Boolean)">
+            <summary>
+            Query on a double range, with the option to include the lower and upper bounds.
+            Basically a &gt;= &lt;= query.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower range</param>
+            <param name="upper">upper range</param>
+            <param name="includeLower">boolean to include the lower range.</param>
+            <param name="includeUpper">boolean to include the upper range.</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.Single,System.Single)">
+            <summary>
+            Query on an float range.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower range</param>
+            <param name="upper">upper range</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.Single,System.Single,System.Boolean,System.Boolean)">
+            <summary>
+            Query on a float range, with the option to include the lower and upper bounds.
+            Basically a &gt;= &lt;= query.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower range</param>
+            <param name="upper">upper range</param>
+            <param name="includeLower">boolean to include the lower range.</param>
+            <param name="includeUpper">boolean to include the upper range.</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.Int64,System.Int64)">
+            <summary>
+            Query on an long range.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower range</param>
+            <param name="upper">upper range</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.Int64,System.Int64,System.Boolean,System.Boolean)">
+            <summary>
+            Query on a long range, with the option to include the lower and upper bounds.
+            Basically a &gt;= &lt;= query.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower range</param>
+            <param name="upper">upper range</param>
+            <param name="includeLower">boolean to include the lower range.</param>
+            <param name="includeUpper">boolean to include the upper range.</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.String,System.String)">
+            <summary>
+            Query on an string range.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower bounds</param>
+            <param name="upper">upper bounds</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.Range(System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Query on a string range, with the option to include the lower and upper bounds.
+            Basically a &gt;= &lt;= query.
+            </summary>
+            <param name="fieldName">the field name</param>
+            <param name="lower">lower bounds</param>
+            <param name="upper">upper bounds</param>
+            <param name="includeLower">boolean to include the lower range.</param>
+            <param name="includeUpper">boolean to include the upper range.</param>
+            <returns>Query object as boolean operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.GroupedAnd(System.Collections.Generic.List{System.String},System.Collections.IList)">
+            <summary>
+            Grouped AND query on multiple fields and values.
+            
+            Example: GroupedAnd({"id","type"},{"1","page"}
+            
+            becomes: +(+id:1 +type:page)
+            List lengths must match or query param may be smaller.
+            </summary>
+            <param name="fields">the list of fields.</param>
+            <param name="query">the query parameters</param>
+            <returns>Query object as operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.GroupedOr(System.Collections.Generic.List{System.String},System.Collections.IList)">
+            <summary>
+            Grouped OR query on multiple fields and values.
+            
+            Example: GroupedAnd({"id","type"},{"1","page"}
+            becomes: +(id:1 type:page)
+            
+            List lengths must match or query param may be smaller.
+            </summary>
+            <param name="fields">the list of fields.</param>
+            <param name="query">the query parameters</param>
+            <returns>Query object as operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.GroupedNot(System.Collections.Generic.List{System.String},System.Collections.IList)">
+            <summary>
+            Grouped NOT query on multiple fields and values.
+            
+            Example: GroupedAnd({"id","type"},{"1","page"}
+            becomes: (-id:1 -type:page)
+            
+            List lengths must match or query param may be smaller.
+            </summary>
+            <param name="fields">the list of fields.</param>
+            <param name="query">the query parameters</param>
+            <returns>Query object as operation.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.WithOperation(Sdl.Tridion.Api.IqQuery.IBooleanOperation)">
+            <summary>
+            Sets the operation in Query object.
+            </summary>
+            <param name="operation">The operation.</param>
+            <returns>The current instance.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.SortFieldsDescending(System.Collections.Generic.List{System.String})">
+            <summary>
+            Sets descending sort fields.
+            </summary>
+            <param name="fieldNames">The fields.</param>
+            <returns>The current instance.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.SortFieldsAscending(System.Collections.Generic.List{System.String})">
+            <summary>
+            Sets ascending sort fields.
+            </summary>
+            <param name="fieldNames">The fields.</param>
+            <returns>The current instance.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.SortStringFieldsDescending(System.Collections.Generic.List{System.String})">
+            <summary>
+            Sets descending sort fields having string type.
+            </summary>
+            <param name="fieldNames">The fields.</param>
+            <returns>The current instance.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.SortStringFieldsAscending(System.Collections.Generic.List{System.String})">
+            <summary>
+            Sets sort fields having string type.
+            </summary>
+            <param name="fieldNames">The fields.</param>
+            <returns>The current instance.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQuery.GroupEnd">
+            <summary>
+            Ends group.
+            </summary>
+            <returns>Parent Query object.</returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.IQueryClient`2">
+            <summary>
+            IQueryClient
+            </summary>
+            <typeparam name="T">Result Set type</typeparam>
+            <typeparam name="R">Result type</typeparam>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQueryClient`2.SearchById(System.String,System.String)">
+            <summary>
+            Searches a document by Id.
+            </summary>      
+            <param name="index">Index name</param>
+            <param name="id">Id</param>
+            <returns>Results</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQueryClient`2.SearchByIdAsync(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Searches a document by Id.
+            </summary>
+            <param name="index">Index name</param>
+            <param name="id">Id</param>
+            <returns>Results</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQueryClient`2.SearchWithCriteria(System.String,System.String,Sdl.Tridion.Api.IqQuery.IResultFilter)">
+            <summary>
+            Searches for documents by the specified criteria.
+            </summary>
+            <param name="index">Index name</param>
+            <param name="criteria">Criteria</param>
+            <param name="filter">Filter</param>
+            <returns>Results</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQueryClient`2.SearchWithCriteriaAsync(System.String,System.String,Sdl.Tridion.Api.IqQuery.IResultFilter,System.Threading.CancellationToken)">
+            <summary>
+            Searches for documents by the specified criteria.
+            </summary>
+            <param name="index">Index name</param>
+            <param name="criteria">Criteria</param>
+            <param name="filter">Filter</param>
+            <returns>Results</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQueryClient`2.SearchWithCriteria(System.String,Sdl.Tridion.Api.IqQuery.ICriteria,Sdl.Tridion.Api.IqQuery.IResultFilter)">
+            <summary>
+            Searches for documents by the specified criteria.
+            </summary>
+            <param name="index">Index name</param>
+            <param name="criteria">Criteria</param>
+            <param name="filter">Filter</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.IQueryClient`2.SearchWithCriteriaAsync(System.String,Sdl.Tridion.Api.IqQuery.ICriteria,Sdl.Tridion.Api.IqQuery.IResultFilter,System.Threading.CancellationToken)">
+            <summary>
+            Searches for documents by the specified criteria.
+            </summary>
+            <param name="index">Index name</param>
+            <param name="criteria">Criteria</param>
+            <param name="filter">Filter</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.IQueryFilter">
+            <summary>
+            Contains several filters for query result manipulation.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.IQueryResult">
+            <summary>
+            Empty interface to allow full extensibility.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.IQueryResultData`1">
+            <summary>
+            Represents a result set of a query.
+            </summary>
+            <typeparam name="T">The type of each individual result.</typeparam>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IQueryResultData`1.Hits">
+            <summary>
+            Returns number of hits
+            </summary>
+        </member>
+        <member name="P:Sdl.Tridion.Api.IqQuery.IQueryResultData`1.QueryResults">
+            <summary>
+            Return query results.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.IQueryResultTransformer`1">
+            <summary>
+            Defines methods for transforming query results to custom data models.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Sdl.Tridion.Api.IqQuery.ISearcherApi`2.WithResultFilter(Sdl.Tridion.Api.IqQuery.IResultFilter)" -->
+        <member name="M:Sdl.Tridion.Api.IqQuery.ISearcherApi`2.WithIndexName(System.String)">
+            <summary>
+            Sets the index name to search for. Defaults to the index given in udp-client-conf.xml TODO
+            </summary>
+            <param name="indexName"></param>
+            <returns>SearchApi instancer</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.ISearcherApi`2.Search(Sdl.Tridion.Api.IqQuery.ICriteria)">
+            <summary>
+            Searches items based on the given criteria.
+            </summary>
+            <param name="criteria">Search Criteria</param>
+            <returns>QueryResultData object.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.ISearcherApi`2.SearchAsync(Sdl.Tridion.Api.IqQuery.ICriteria,System.Threading.CancellationToken)">
+            <summary>
+            Searches items based on the given criteria.
+            </summary>
+            <param name="criteria">Search Criteria</param>
+            <returns>QueryResultData object.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.ISearcherApi`2.Search(System.String)">
+            <summary>
+            Searches items based on the given raw query.
+            </summary>
+            <param name="query">raw query</param>
+            <returns>QueryResultData object.</returns>
+        </member>
+        <member name="M:Sdl.Tridion.Api.IqQuery.ISearcherApi`2.SearchAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Searches items based on the given raw query.
+            </summary>
+            <param name="query">raw query</param>
+            <returns>QueryResultData object.</returns>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.ITermValue">
+            <summary>
+            Represents a value to search for.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.MatchOperation">
+            <summary>
+            Boolean Operator for a Match or MultiMatch query.
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.IqQuery.MatchOperation.And">
+            <summary>
+            And type (+)
+            </summary>
+        </member>
+        <member name="F:Sdl.Tridion.Api.IqQuery.MatchOperation.Or">
+            <summary>
+            Or Type (-)
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.QueryException">
+            <summary>
+            Query Exception
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Client.IqSearchClient`2">
+            <summary>
+            Default IQ search client implementation
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Compile.CompileException">
+            <summary>
+            Compile Exception
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Compile.DefaultQueryCompiler">
+            <summary>
+            Default implementation for Query Compiler.
+            We transform the query data model into a simple query-dsl that can be passed to the iq service which will then transform that into the configured
+            search provider such as elasticsearch.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Compile.IQueryCompiler">
+            <summary>
+            Query Compiler
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Compile.IQueryModelTransform">
+            <summary>
+            POCO objects used to hold the serializable query-dsl
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Field.BaseField">
+            <summary>
+            Base Field
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Field.DefaultTermValue">
+            <summary>
+            Default implementation for TermValue
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Field.FieldException">
+            <summary>
+            Field Exception
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Field.GroupedField">
+            <summary>
+            Grouped Field
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Field.IdField">
+            <summary>
+            Id Field
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Field.ItemTypeField">
+            <summary>
+            ItemType Field
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Field.MultiMatchField">
+            <summary>
+            Multi Match Field.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Field.RangeField">
+            <summary>
+            Range field
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Field.SingleField">
+            <summary>
+            Single value field.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Operation.AndOperation">
+            <summary>
+            And Operation
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Operation.OrOperation">
+            <summary>
+            Or Operation
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Operation.UnitOperation">
+            <summary>
+            Unit Operation
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Result.SearchQueryResult">
+            <summary>
+            Search Query Result
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Result.SearchQueryResultSet">
+            <summary>
+            Search Query Result Set
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Result.SearchResultFilter">
+            <summary>
+            Search Result Filter
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Search.SearchCriteria">
+            <summary>
+            Default implementation for Criteria.
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Search.SearchNode">
+            <summary>
+            Search Node
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.Model.Search.SearchQuery">
+            <summary>
+            Search Query
+            </summary>
+        </member>
+        <member name="T:Sdl.Tridion.Api.IqQuery.RestClient.IRestQueryClientConfigurationProvider">
+            <summary>
+            IRestQueryClientConfigurationProvider
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,140 @@
+{
+	"mappings": {
+		"dynamic": "strict",
+		"dynamic_date_formats": [
+			"date_time_no_millis"
+		],
+		"properties": {
+			"body": {
+				"type": "text",
+				"fields": {
+					"completion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"keyword": {
+						"type": "text",
+						"store": true
+					}
+				},
+				"analyzer": "standard"
+			},
+			"contentClassification": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"store": true
+					}
+				}
+			},
+			"contentOwner": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"store": true
+					}
+				}
+			},
+			"contentType": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"store": true
+					}
+				}
+			},
+			"itemtype": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"store": true
+					}
+				}
+			},
+			"parentsgid": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword"
+					}
+				}
+			},
+			"publicationid": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"store": true
+					}
+				}
+			},
+			"schemaid": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"store": true
+					}
+				}
+			},
+			"sgid": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword"
+					}
+				}
+			},
+			"summary": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"store": true
+					}
+				}
+			},
+			"title": {
+				"type": "text",
+				"fields": {
+					"completion": {
+						"type": "completion",
+						"analyzer": "simple",
+						"preserve_separators": true,
+						"preserve_position_increments": true,
+						"max_input_length": 50
+					},
+					"keyword": {
+						"type": "text",
+						"store": true
+					}
+				},
+				"analyzer": "standard"
+			},
+			"type": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword"
+					}
+				}
+			},
+			"url": {
+				"type": "text",
+				"fields": {
+					"keyword": {
+						"type": "keyword",
+						"store": true
+					}
+				}
+			}
+		}
+	}
+}

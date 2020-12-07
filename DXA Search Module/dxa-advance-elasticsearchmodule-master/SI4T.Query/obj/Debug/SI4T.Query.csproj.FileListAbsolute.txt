@@ -1,0 +1,8 @@
+C:\WebApplication\dxa-web-application-dotnet-DXA_2.2\dxa-web-application-dotnet-DXA_2.2\dxa-elasticsearchmodule-master\SI4T.Query\obj\Debug\SI4T.Query.csproj.CoreCompileInputs.cache
+C:\WebApplication\dxa-web-application-dotnet-DXA_2.2\dxa-web-application-dotnet-DXA_2.2\dxa-elasticsearchmodule-master\SI4T.Query\bin\Debug\SI4T.Query.dll
+C:\WebApplication\dxa-web-application-dotnet-DXA_2.2\dxa-web-application-dotnet-DXA_2.2\dxa-elasticsearchmodule-master\SI4T.Query\bin\Debug\SI4T.Query.pdb
+C:\WebApplication\dxa-web-application-dotnet-DXA_2.2\dxa-web-application-dotnet-DXA_2.2\dxa-elasticsearchmodule-master\SI4T.Query\bin\Debug\Newtonsoft.Json.dll
+C:\WebApplication\dxa-web-application-dotnet-DXA_2.2\dxa-web-application-dotnet-DXA_2.2\dxa-elasticsearchmodule-master\SI4T.Query\bin\Debug\Newtonsoft.Json.xml
+C:\WebApplication\dxa-web-application-dotnet-DXA_2.2\dxa-web-application-dotnet-DXA_2.2\dxa-elasticsearchmodule-master\SI4T.Query\obj\Debug\SI4T.Query.csproj.CopyComplete
+C:\WebApplication\dxa-web-application-dotnet-DXA_2.2\dxa-web-application-dotnet-DXA_2.2\dxa-elasticsearchmodule-master\SI4T.Query\obj\Debug\SI4T.Query.dll
+C:\WebApplication\dxa-web-application-dotnet-DXA_2.2\dxa-web-application-dotnet-DXA_2.2\dxa-elasticsearchmodule-master\SI4T.Query\obj\Debug\SI4T.Query.pdb

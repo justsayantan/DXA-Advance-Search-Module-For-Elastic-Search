@@ -1,0 +1,57 @@
+﻿@using Sdl.Web.Modules.Search
+@using System.Web
+@model SearchQuery
+@{ 
+    if (!string.IsNullOrEmpty(GenericHelper.GetValueFromQueryString("q")))
+    {
+        Model.q = Model.QueryText;
+    }
+
+    <div class="col-md-3 col-sm-12">
+        <form id="secsearchform" name="search" method="get" action="/search">
+            @if (!string.IsNullOrEmpty(Model.q))
+            {
+                @Html.HiddenFor(model => Model.q)
+            }
+            <div class="search-filter-container list-group-item" >
+                <div class="page-header page-header-top">
+                    <h4>Refine search by</h4>
+                    <span class="pull-right">
+                        <a href="#" onclick="expandRefineBy(this)"><i class="refine-icon expand-icon"></i></a>
+                    </span>
+                </div>
+                @if (Model.Facets != null && Model.Facets.Count > 0)
+                {
+                    int counter = 0;
+                    foreach (var facet in Model.Facets)
+                    {
+                        <b><u><h4>@facet.Name</h4></u></b>
+                        <div id="@string.Format("WF-SrchRes-Grp{0}",counter)">
+                            @if (facet.Buckets != null && facet.Buckets.Count > 0)
+                            {
+                                foreach (var bucket in facet.Buckets)
+                                {
+                                    int indexerCheckBox = 1;
+                                    string queryStringValue = (!string.IsNullOrEmpty(facet.Name) && !string.IsNullOrEmpty(bucket.Name)) ? GenericHelper.GetValueFromQueryString(facet.Name) : null;
+                                    bool isChecked = (!string.IsNullOrEmpty(queryStringValue)) ? GenericHelper.CompareInComaSeperatedString(queryStringValue, bucket.Name) : false;
+                                    <p class="SrchRes-2C">
+                                        <input type="checkbox" id="@string.Format("CheckBox_{0}", indexerCheckBox.ToString())" name="@facet.Name" value="@bucket.Name" checked="@isChecked">
+                                        <span class="SrchRes-2D">@bucket.Name (@bucket.Count)</span>
+                                    </p>
+                                    indexerCheckBox++;
+                                }
+                            }
+                        </div>
+                        counter++;
+                    }
+                }
+                <div class="row" id="search-post-btn">
+                    <span>
+                        <input class="btn btn-primary" type="submit" id="Submit-Button" href="#" value="Submit">
+                    </span>
+                    <span class="SrchRes-ClrAll"><a class="btn btn-primary" id="ClearAll-Button" href="#" onclick="clearAllSrchCheckboxes()">Clear all</a></span>
+                </div>
+            </div>
+        </form>
+    </div>
+}
